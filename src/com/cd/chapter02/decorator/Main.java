@@ -1,10 +1,6 @@
 package com.cd.chapter02.decorator;
 
-import java.io.BufferedOutputStream;
-import java.io.DataOutputStream;
-import java.io.FileOutputStream;
-import java.io.FilterOutputStream;
-import java.io.IOException;
+import java.io.*;
 
 public class Main {
 
@@ -13,8 +9,8 @@ public class Main {
 							new PacketHtmlHeaderCreator(
 							new PacketBodyCreator()));//核心组件最先构造
 		System.out.println(pc.handlerContent());
-		//OutputStream 使用的装饰者模式
-		//OutputStream 维护核心组件 component 对象
+		//OutputStream //使用的装饰者模式
+		//OutputStream //维护核心组件 component 对象
 		//FileOutputStream //具体组件 系统核心类
 		//FilterOutputStream //装饰者
 		//BufferedOutputStream //具体的装饰器  增加缓冲 ，优化IO性能
