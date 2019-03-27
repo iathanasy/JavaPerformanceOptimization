@@ -17,7 +17,7 @@ public class ListTest {
 		 * LinkedList 链表实现 -> 在任意位置插入数据都是一样的
 		 */
 		long begin = System.currentTimeMillis();
-		ArrayList<String> arr = new ArrayList<>();
+		ArrayList<String> arr = new ArrayList();
 		for (int i = 0; i < 50000; i++) {
 			arr.add(0, i+"");
 		}
@@ -25,7 +25,7 @@ public class ListTest {
 		System.out.println("arr: "+ (System.currentTimeMillis() - begin));
 		
 		begin = System.currentTimeMillis();
-		LinkedList<String> linked = new LinkedList<>();
+		LinkedList<String> linked = new LinkedList<String>();
 		for (int i = 0; i < 50000; i++) {
 			linked.add(0, i+"");
 		}
