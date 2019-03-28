@@ -1,7 +1,7 @@
 package com.cd.chapter02.factory.abstractfactory;
 
 /**
- * @description: Å®ÐÔ¹¤³§
+ * @description: å¥³æ€§å·¥åŽ‚
  * @author: Mr.Wang
  * @create: 2019-03-27 22:50
  **/

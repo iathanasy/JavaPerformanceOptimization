@@ -1,7 +1,7 @@
 package com.cd.chapter02.factory.abstractfactory;
 
 /**
- * @description: ³éÏó¹¤³§
+ * @description: æŠ½è±¡å·¥å‚
  * @author: Mr.Wang
  * @create: 2019-03-27 22:41
  **/
@@ -9,11 +9,11 @@ public abstract class AbstractHumanFactory implements HumanFactory{
 
     protected Human createHuman(HumanEnum humanEnum){
         Human human = null;
-        if(!humanEnum.getValue().equals("")) {//Èç¹û´«½øÀ´µÄ²»ÊÇÒ»¸öEnumÖĞµÄElement²»´¦Àí
+        if(!humanEnum.getValue().equals("")) {//å¦‚æœä¼ è¿›æ¥çš„ä¸æ˜¯ä¸€ä¸ªEnumä¸­çš„Elementä¸å¤„ç†
             try {
                 human = (Human) Class.forName(humanEnum.getValue()).newInstance();
             } catch (Exception e) {
-                //ÒòÎªÊ¹ÓÃµÄenum,ÕâÖÖÒì³£Çé¿ö²»»á·¢ËÍ £¬³ı·ÇenumÓĞÎÊÌâ
+                //å› ä¸ºä½¿ç”¨çš„enum,è¿™ç§å¼‚å¸¸æƒ…å†µä¸ä¼šå‘é€ ï¼Œé™¤éenumæœ‰é—®é¢˜
                 e.printStackTrace();
             }
         }

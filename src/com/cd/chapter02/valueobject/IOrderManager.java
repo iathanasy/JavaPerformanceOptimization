@@ -5,12 +5,12 @@ import java.rmi.RemoteException;
 /**
  * 
  * @author cd
- * @date 2019Äê3ÔÂ26ÈÕ ÏÂÎç4:11:35
+ * @date 2019å¹´3æœˆ26æ—¥ ä¸‹åˆ4:11:35
  * @desc 
  */
 public interface IOrderManager extends Remote{
 	
-	public Order getOrder(int id) throws RemoteException; //Value Object Ä£Ê½
+	public Order getOrder(int id) throws RemoteException; //Value Object æ¨¡å¼
 
 	public String getClientName(int id) throws RemoteException;
 	public String getProdName(int id) throws RemoteException;

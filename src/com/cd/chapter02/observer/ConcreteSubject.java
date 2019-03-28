@@ -5,8 +5,8 @@ import java.util.Vector;
 /**
  * 
  * @author cd
- * @date 2019Äê3ÔÂ26ÈÕ ÉÏÎç11:07:18
- * @desc ¾ßÌåµÄÖ÷ÌâÊµÏÖ
+ * @date 2019å¹´3æœˆ26æ—¥ ä¸Šåˆ11:07:18
+ * @desc å…·ä½“çš„ä¸»é¢˜å®ç°
  */
 public class ConcreteSubject implements ISubject{
 	
@@ -26,7 +26,7 @@ public class ConcreteSubject implements ISubject{
 	@Override
 	public void inform() {
 		for (IObserver obs : observers) {
-			obs.update(user); //×¢Òâ ÔÚÕâÀïÍ¨Öª¹Û²ìÕß
+			obs.update(user); //æ³¨æ„ åœ¨è¿™é‡Œé€šçŸ¥è§‚å¯Ÿè€…
 		}
 	}
 	

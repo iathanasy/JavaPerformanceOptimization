@@ -5,44 +5,44 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * @description: ¹¤³§·½·¨Ä£Ê½
+ * @description: å·¥å‚æ–¹æ³•æ¨¡å¼
  * @author: Mr.Wang
  * @create: 2019-03-27 21:19
  **/
 public class HumanFactory {
-    //ÑÓ³Ù»¯ £¬³õÊ¼»¯¹ıµÄHuman¶¼ÔÚÕâÀï
+    //å»¶è¿ŸåŒ– ï¼Œåˆå§‹åŒ–è¿‡çš„Humanéƒ½åœ¨è¿™é‡Œ
     private static HashMap<String, Human> humans = new HashMap<String, Human>();
 
-    //ÖÆÔì ĞèÒª´«ÈëÀàĞÍ
+    //åˆ¶é€  éœ€è¦ä¼ å…¥ç±»å‹
     public static Human createHuman(Class c){
-        Human human = null; //¶¨ÒåÀàĞÍ
+        Human human = null; //å®šä¹‰ç±»å‹
         try {
-            //Èç¹ûmapÓĞÖ±½ÓÈ¥£¬²»ÓÃ³õÊ¼»¯
+            //å¦‚æœmapæœ‰ç›´æ¥å»ï¼Œä¸ç”¨åˆå§‹åŒ–
             if(humans.containsKey(c.getSimpleName())){
                 human = humans.get(c.getSimpleName());
             }else {
-                human = (Human) Class.forName(c.getName()).newInstance();//Éú³ÉÊµÁĞ
-                //·ÅÈëmapÖĞ
+                human = (Human) Class.forName(c.getName()).newInstance();//ç”Ÿæˆå®åˆ—
+                //æ”¾å…¥mapä¸­
                 humans.put(c.getSimpleName(), human);
             }
         } catch (IllegalAccessException e) {
-            System.out.println("¶¨Òå´íÎó");
+            System.out.println("å®šä¹‰é”™è¯¯");
         } catch (InstantiationException e) {
-            System.out.println("Ö¸¶¨ÀàĞÍ");
+            System.out.println("æŒ‡å®šç±»å‹");
         } catch (ClassNotFoundException e) {
-            System.out.println("ÕÒ²»µ½¸ÃÊµÁĞ");
+            System.out.println("æ‰¾ä¸åˆ°è¯¥å®åˆ—");
         }
         return human;
     }
 
-    //Ö±½ÓÖÆÔì Ëæ»ú
+    //ç›´æ¥åˆ¶é€  éšæœº
     public static Human createHuman(){
         Human human = null;
-        List<Class> list = ClassUtils.getAllClassByinterface(Human.class);//¶¨ÒåÁË¶àÉÙÈËÀà
+        List<Class> list = ClassUtils.getAllClassByinterface(Human.class);//å®šä¹‰äº†å¤šå°‘äººç±»
         Random random = new Random();
         int rand = random.nextInt(list.size());
 
-        human = createHuman(list.get(rand));//Ëæ»úÖÆÔì
+        human = createHuman(list.get(rand));//éšæœºåˆ¶é€ 
         return human;
     }
 }

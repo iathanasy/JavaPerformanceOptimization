@@ -1,23 +1,23 @@
 package com.cd.chapter02.factory.abstractfactory;
 
 /**
- * @description: ³éÏó°×ÈË
+ * @description: æŠ½è±¡ç™½äºº
  * @author: Mr.Wang
  * @create: 2019-03-27 22:25
  **/
 public abstract class AbstractWhiteHuman implements Human {
     @Override
     public void laugh() {
-        System.out.println("°×ÈË»áĞ¦");
+        System.out.println("ç™½äººä¼šç¬‘");
     }
 
     @Override
     public void cry() {
-        System.out.println("°×ÈË»á¿Ş");
+        System.out.println("ç™½äººä¼šå“­");
     }
 
     @Override
     public void talk() {
-        System.out.println("°×ÈË»áËµ»°");
+        System.out.println("ç™½äººä¼šè¯´è¯");
     }
 }

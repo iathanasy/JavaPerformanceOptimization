@@ -6,8 +6,8 @@ import java.util.Map;
 /**
  * 
  * @author cd
- * @date 2019Äê3ÔÂ25ÈÕ ÏÂÎç5:22:20
- * @desc ÏíÔª¹¤³§
+ * @date 2019å¹´3æœˆ25æ—¥ ä¸‹åˆ5:22:20
+ * @desc äº«å…ƒå·¥å‚
  */
 public class ReportManagerFactory {
 
@@ -18,7 +18,7 @@ public class ReportManagerFactory {
 		IReportManager r = financial.get(tenantId);
 		if(r == null){
 			r = new FinancialReportManager(tenantId);
-			financial.put(tenantId, r);//Î¬»¤ÒÑ´´½¨µÄÏíÔª¶ÔÏó
+			financial.put(tenantId, r);//ç»´æŠ¤å·²åˆ›å»ºçš„äº«å…ƒå¯¹è±¡
 		}
 		return r;
 	}

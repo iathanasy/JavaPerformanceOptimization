@@ -2,11 +2,11 @@ package com.cd.chapter02.observer;
 /**
  * 
  * @author cd
- * @date 2019Äê3ÔÂ26ÈÕ ÉÏÎç11:01:11
- * @desc Ö÷Ìâ½Ó¿Ú
+ * @date 2019å¹´3æœˆ26æ—¥ ä¸Šåˆ11:01:11
+ * @desc ä¸»é¢˜æ¥å£
  */
 public interface ISubject {
-	void attach(IObserver observer);//Ìí¼Ó¹Û²ìÕß
-	void detach(IObserver observer);//É¾³ı¹Û²ìÕß
-	void inform();//Í¨ÖªËùÓĞ¹Û²ìÕß
+	void attach(IObserver observer);//æ·»åŠ è§‚å¯Ÿè€…
+	void detach(IObserver observer);//åˆ é™¤è§‚å¯Ÿè€…
+	void inform();//é€šçŸ¥æ‰€æœ‰è§‚å¯Ÿè€…
 }

@@ -1,13 +1,13 @@
 package com.cd.chapter02.strategy;
 
 /**
- * @description: ¾ßÌå²ßÂÔ²Ù×÷¶ş
+ * @description: å…·ä½“ç­–ç•¥æ“ä½œäºŒ
  * @author: Mr.Wang
  * @create: 2019-03-26 22:42
  **/
 public class BlockEnemy implements IStrategy {
     @Override
     public void operate() {
-        System.out.println("²Ù×÷¶ş...");
+        System.out.println("æ“ä½œäºŒ...");
     }
 }

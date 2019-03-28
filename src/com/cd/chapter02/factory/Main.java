@@ -7,19 +7,19 @@ package com.cd.chapter02.factory;
  **/
 public class Main {
     public static void main(String[] args) {
-        //´«ÈëÀàĞÍ ÖÆÔì °×ÈË
+        //ä¼ å…¥ç±»å‹ åˆ¶é€  ç™½äºº
         Human whiteHuman = HumanFactory.createHuman(WhiteHuman.class);
         whiteHuman.cry();
         whiteHuman.laugh();
         whiteHuman.talk();
 
-        //´«ÈëÀàĞÍ ÖÆÔì ºÚÈË
+        //ä¼ å…¥ç±»å‹ åˆ¶é€  é»‘äºº
         Human blackHuman = HumanFactory.createHuman(BlackHuman.class);
         blackHuman.cry();
         blackHuman.laugh();
         blackHuman.talk();
 
-        //´«ÈëÀàĞÍ ÖÆÔì »ÆÈË
+        //ä¼ å…¥ç±»å‹ åˆ¶é€  é»„äºº
         Human yellowHuman = HumanFactory.createHuman(YellowHuman.class);
         yellowHuman.talk();
         yellowHuman.laugh();
@@ -27,7 +27,7 @@ public class Main {
 
 
         /////////////////////////////////////////////////////////////////
-        //Ëæ»úÖÆÔì
+        //éšæœºåˆ¶é€ 
         for (int i = 0; i < 100000; i++){
             Human human = HumanFactory.createHuman();
             human.cry();

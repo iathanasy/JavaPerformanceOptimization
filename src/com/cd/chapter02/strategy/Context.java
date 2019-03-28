@@ -1,18 +1,18 @@
 package com.cd.chapter02.strategy;
 
 /**
- * @description: ²Ù×÷µÄ»·¾³
+ * @description: æ“ä½œçš„ç¯å¢ƒ
  * @author: Mr.Wang
  * @create: 2019-03-26 22:43
  **/
 public class Context {
-    //¹¹Ôìº¯ÊıÊ¹ÓÃÄÇ¸ö²Ù×÷
+    //æ„é€ å‡½æ•°ä½¿ç”¨é‚£ä¸ªæ“ä½œ
     private IStrategy strategy;
     public Context(IStrategy strategy){
         this.strategy = strategy;
     }
 
-    //Ê¹ÓÃÄÇ¸ö²Ù×÷
+    //ä½¿ç”¨é‚£ä¸ªæ“ä½œ
     public void operate(){
         strategy.operate();;
     }

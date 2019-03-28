@@ -2,17 +2,17 @@ package com.cd.chapter02.agent;
 /**
  * 
  * @author cd
- * @date 2019Äê3ÔÂ25ÈÕ ÏÂÎç2:56:07
- * @desc ´úÀíÀà ÇáÁ¿¼¶¶ÔÏó ´´½¨ºÜ¿ì ÓÃÓÚÌæ´úDBQueryµÄÎ»ÖÃ
+ * @date 2019å¹´3æœˆ25æ—¥ ä¸‹åˆ2:56:07
+ * @desc ä»£ç†ç±» è½»é‡çº§å¯¹è±¡ åˆ›å»ºå¾ˆå¿« ç”¨äºæ›¿ä»£DBQueryçš„ä½ç½®
  */
 public class DBQueryProxy implements IDBQuery{
 	private DBQuery real = null;
 
 	public String request() {
-		//ÕæÕıĞèÒªµÄÊ±ºò²Å´´½¨ÕæÊµ¶ÔÏó£¬´´½¨¹ı³Ì¿ÉÄÜºÜÂı
+		//çœŸæ­£éœ€è¦çš„æ—¶å€™æ‰åˆ›å»ºçœŸå®å¯¹è±¡ï¼Œåˆ›å»ºè¿‡ç¨‹å¯èƒ½å¾ˆæ…¢
 		if(real == null)
 			real = new DBQuery();
-		//ÔÚ¶àÏß³Ì»·¾³ÏÂ£¬ÕâÀï·µ»ØÒ»¸öĞé¼ÙÀà£¬ ÀàËÆÓÚFutureÄ£Ê½
+		//åœ¨å¤šçº¿ç¨‹ç¯å¢ƒä¸‹ï¼Œè¿™é‡Œè¿”å›ä¸€ä¸ªè™šå‡ç±»ï¼Œ ç±»ä¼¼äºFutureæ¨¡å¼
 		return real.request();
 	}
 	

@@ -8,25 +8,25 @@ import com.cd.chapter02.agent.DBQuery;
 import com.cd.chapter02.agent.IDBQuery;
 
 /**
- *  ¶¯Ì¬´úÀíÊ¹ÓÃ×Ö½ÚÂë¶¯Ì¬Éú³É¼ÓÔØ¼¼Êõ£¬ÔÚÔËĞĞÊ±Éú³É²¢¼ÓÔØÀà
+ *  åŠ¨æ€ä»£ç†ä½¿ç”¨å­—èŠ‚ç åŠ¨æ€ç”ŸæˆåŠ è½½æŠ€æœ¯ï¼Œåœ¨è¿è¡Œæ—¶ç”Ÿæˆå¹¶åŠ è½½ç±»
  * @author cd
- * @date 2019Äê3ÔÂ25ÈÕ ÏÂÎç3:12:31
- * @desc jdk×Ô´ø ÍÆ¼öÊ¹ÓÃ CGLIB Javassist
+ * @date 2019å¹´3æœˆ25æ—¥ ä¸‹åˆ3:12:31
+ * @desc jdkè‡ªå¸¦ æ¨èä½¿ç”¨ CGLIB Javassist
  */
 public class JdkDbQueryHandler implements InvocationHandler{
-	IDBQuery real = null; //Ö÷Ìâ½Ó¿Ú
+	IDBQuery real = null; //ä¸»é¢˜æ¥å£
 
 	public Object invoke(Object proxy, Method method, Object[] args)
 			throws Throwable {
 		if(real == null)
-			real  = new DBQuery();//Èç¹ûµÚÒ»´Îµ÷ÓÃ£¬ÔòÉú³ÉÕæÊµ¶ÔÏó
-		return real.request(); //Ê¹ÓÃÕæÊµÖ÷ÌâÍê³ÉÊµ¼Ê²Ù×÷
+			real  = new DBQuery();//å¦‚æœç¬¬ä¸€æ¬¡è°ƒç”¨ï¼Œåˆ™ç”ŸæˆçœŸå®å¯¹è±¡
+		return real.request(); //ä½¿ç”¨çœŸå®ä¸»é¢˜å®Œæˆå®é™…æ“ä½œ
 	}
 	
 	public static IDBQuery createJdkProxy(){
 		IDBQuery jdkProxy = (IDBQuery) Proxy.newProxyInstance(ClassLoader.getSystemClassLoader(),
 				new Class[]{IDBQuery.class}, 
-				new JdkDbQueryHandler());//Ö¸¶¨Handler
+				new JdkDbQueryHandler());//æŒ‡å®šHandler
 		return jdkProxy;
 	}
 	

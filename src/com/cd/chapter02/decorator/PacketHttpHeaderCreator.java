@@ -3,8 +3,8 @@ package com.cd.chapter02.decorator;
 /**
  * 
  * @author cd
- * @date 2019Äê3ÔÂ26ÈÕ ÉÏÎç10:08:47
- * @desc ¾ßÌå×°ÊÎÆ÷£º Íê³ÉHttpÍ·²¿´¦Àí
+ * @date 2019å¹´3æœˆ26æ—¥ ä¸Šåˆ10:08:47
+ * @desc å…·ä½“è£…é¥°å™¨ï¼š å®ŒæˆHttpå¤´éƒ¨å¤„ç†
  */
 public class PacketHttpHeaderCreator extends PacketDecorator{
 
@@ -14,7 +14,7 @@ public class PacketHttpHeaderCreator extends PacketDecorator{
 
 	@Override
 	public String handlerContent() {
-		//¶Ô¸ø¶¨Êı¾İ¼ÓÉÏhttpÍ·ĞÅÏ¢
+		//å¯¹ç»™å®šæ•°æ®åŠ ä¸Šhttpå¤´ä¿¡æ¯
 		StringBuffer sb = new StringBuffer();
 		sb.append("Cache-Control:no-cache\n");
 		sb.append("Date:Tue, 26 Mar 2019 02:13:08 GMT\n");

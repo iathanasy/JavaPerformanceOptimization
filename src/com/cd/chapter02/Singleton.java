@@ -10,18 +10,18 @@ import java.io.Serializable;
 
 /**
  * @author cd
- * @date 2019Äê3ÔÂ25ÈÕ ÉÏÎç11:29:34
- * @desc 1.µ¥ÀıÄ£Ê½
- * ×¢Òâ£º ĞòÁĞ»¯ºÍ·´ĞòÁĞ»¯¿ÉÄÜ»áÆÆ»µµ¥Àı¡£
+ * @date 2019å¹´3æœˆ25æ—¥ ä¸Šåˆ11:29:34
+ * @desc 1.å•ä¾‹æ¨¡å¼
+ * æ³¨æ„ï¼š åºåˆ—åŒ–å’Œååºåˆ—åŒ–å¯èƒ½ä¼šç ´åå•ä¾‹ã€‚
  */
 public class Singleton {
 
 	private Singleton(){
-		//Ã»ÓĞÊ¹ÓÃµ¥ÀıÀà»¹ÊÇ±»´´½¨³öÀ´ÁË out 
+		//æ²¡æœ‰ä½¿ç”¨å•ä¾‹ç±»è¿˜æ˜¯è¢«åˆ›å»ºå‡ºæ¥äº† out 
 		//Singleton is create
 		//createString is Singleton
 		//Singleton.createString();
-		System.out.println("Singleton is create");//´´½¨µ¥ÀıµÄ¹ı³Ì¿ÉÄÜ»á±È½ÏÂı
+		System.out.println("Singleton is create");//åˆ›å»ºå•ä¾‹çš„è¿‡ç¨‹å¯èƒ½ä¼šæ¯”è¾ƒæ…¢
 	}
 	
 	private static Singleton instance = new Singleton();
@@ -30,7 +30,7 @@ public class Singleton {
 	}
 	
 	public static void createString(){
-		//ÕâÊÇÄ£Äâµ¥ÀıÀà°çÑİÆäËü½ÇÉ«
+		//è¿™æ˜¯æ¨¡æ‹Ÿå•ä¾‹ç±»æ‰®æ¼”å…¶å®ƒè§’è‰²
 		System.out.println("createString is Singleton");
 	}
 	
@@ -57,7 +57,7 @@ class Main implements Runnable{
 	public void run() {
 		for(int i = 0; i < 100000; i++){
 			//Singleton.getInstance(); //spend: 6 ms
-			//ÑÓ³Ù¼ÓÔØ ÒıÓÃµÄÍ¬²½¹Ø¼ü×Ö·´¶ø½µµÍÁËÏµÍ³µÄĞÔÄÜ ÓĞµãµÃ²»³¥Ê§ ĞèÒª¶ÔÆä¸Ä½ø
+			//å»¶è¿ŸåŠ è½½ å¼•ç”¨çš„åŒæ­¥å…³é”®å­—åè€Œé™ä½äº†ç³»ç»Ÿçš„æ€§èƒ½ æœ‰ç‚¹å¾—ä¸å¿å¤± éœ€è¦å¯¹å…¶æ”¹è¿›
 			//LazySingleton.getInstance();// spend: 29 ms
 			StaticSingleton.getInstance();
 		}
@@ -69,8 +69,8 @@ class Main implements Runnable{
 /**
  * 
  * @author cd
- * @date 2019Äê3ÔÂ25ÈÕ ÉÏÎç11:37:24
- * @desc 2.µ¥ÀıÑÓ³Ù¼ÓÔØ  ´´½¨Ê±ºÄ´óÓÚµÚÒ»ÖÖ
+ * @date 2019å¹´3æœˆ25æ—¥ ä¸Šåˆ11:37:24
+ * @desc 2.å•ä¾‹å»¶è¿ŸåŠ è½½  åˆ›å»ºæ—¶è€—å¤§äºç¬¬ä¸€ç§
  */
 class LazySingleton{
 	private LazySingleton(){
@@ -80,9 +80,9 @@ class LazySingleton{
 	private static LazySingleton instance = null;
 	
 	/**
-	 * synchronized ±ØĞëÊ¹ÓÃÍ¬²½,·ñÔò¶àÏß³Ì»·¾³ÏÂ
-	 * µ±Ïß³Ì1ÕıĞÂ½¨µ¥ÀıÊ±£¬Íê³É¸³Öµ²Ù×÷Ç°£¬Ïß³Ì2¿ÉÄÜÅĞ¶ÏÎªinstance = null £¬
-	 * ¹ÊÏß³Ì2Ò²½«Æô¶¯ĞÂ½¨µ¥Àı³ÌĞò£¬¶øµ¼ÖÂ¶à¸öÊµÀı±»´´½¨¡£
+	 * synchronized å¿…é¡»ä½¿ç”¨åŒæ­¥,å¦åˆ™å¤šçº¿ç¨‹ç¯å¢ƒä¸‹
+	 * å½“çº¿ç¨‹1æ­£æ–°å»ºå•ä¾‹æ—¶ï¼Œå®Œæˆèµ‹å€¼æ“ä½œå‰ï¼Œçº¿ç¨‹2å¯èƒ½åˆ¤æ–­ä¸ºinstance = null ï¼Œ
+	 * æ•…çº¿ç¨‹2ä¹Ÿå°†å¯åŠ¨æ–°å»ºå•ä¾‹ç¨‹åºï¼Œè€Œå¯¼è‡´å¤šä¸ªå®ä¾‹è¢«åˆ›å»ºã€‚
 	 * @return
 	 */
 	public static synchronized LazySingleton getInstance(){
@@ -94,20 +94,20 @@ class LazySingleton{
 /**
  * 
  * @author cd
- * @date 2019Äê3ÔÂ25ÈÕ ÏÂÎç2:07:42
- * @desc 3.µ¥ÀıÄ£Ê½ ÄÚ²¿ÀàÀ´Î¬»¤µ¥ÀıµÄÊµÀı 
- * Ê¹ÓÃÄÚ²¿Àà ¼È¿ÉÒÔ×öµ½ÑÓ³Ù¼ÓÔØ Ò²²»±ØÊ¹ÓÃÍ¬²½¹Ø¼ü×Ö ÊÇÒ»ÖÖ±È½ÏÍêÉÆµÄÊµÏÖ
+ * @date 2019å¹´3æœˆ25æ—¥ ä¸‹åˆ2:07:42
+ * @desc 3.å•ä¾‹æ¨¡å¼ å†…éƒ¨ç±»æ¥ç»´æŠ¤å•ä¾‹çš„å®ä¾‹ 
+ * ä½¿ç”¨å†…éƒ¨ç±» æ—¢å¯ä»¥åšåˆ°å»¶è¿ŸåŠ è½½ ä¹Ÿä¸å¿…ä½¿ç”¨åŒæ­¥å…³é”®å­— æ˜¯ä¸€ç§æ¯”è¾ƒå®Œå–„çš„å®ç°
  */
 class StaticSingleton{
 	private StaticSingleton(){
 		System.out.println("StaticSingleton is create");
 	}
 	/**
-	 * ÄÚ²¿ÀàÄ£Ê½ 
-	 * µ±StaticSingleton±»¼ÓÔØÊ±£¬ÆäÄÚ²¿Àà²»»á±»³õÊ¼»¯£¬
-	 * ¹ÊStaticSingleton Àà±»ÔØÈëJVMÊ±£¬²»»á³õÊ¼»¯µ¥Àı
-	 * µ÷ÓÃgetInstance() ·½·¨±»µ÷ÓÃÊ±£¬²Å»á¼ÓÔØSingletonHolder,´Ó¶ø³õÊ¼»¯instance
-	 * ÓÉÓÚÊµÀıÊÇÔÚÀà¼ÓÔØÊ±Íê³É£¬¹ÊÌìÉú¶Ô¶àÏß³ÌÓÑºÃ,²»±ØÊ¹ÓÃ synchronized
+	 * å†…éƒ¨ç±»æ¨¡å¼ 
+	 * å½“StaticSingletonè¢«åŠ è½½æ—¶ï¼Œå…¶å†…éƒ¨ç±»ä¸ä¼šè¢«åˆå§‹åŒ–ï¼Œ
+	 * æ•…StaticSingleton ç±»è¢«è½½å…¥JVMæ—¶ï¼Œä¸ä¼šåˆå§‹åŒ–å•ä¾‹
+	 * è°ƒç”¨getInstance() æ–¹æ³•è¢«è°ƒç”¨æ—¶ï¼Œæ‰ä¼šåŠ è½½SingletonHolder,ä»è€Œåˆå§‹åŒ–instance
+	 * ç”±äºå®ä¾‹æ˜¯åœ¨ç±»åŠ è½½æ—¶å®Œæˆï¼Œæ•…å¤©ç”Ÿå¯¹å¤šçº¿ç¨‹å‹å¥½,ä¸å¿…ä½¿ç”¨ synchronized
 	 */
 	private static class SingletonHolder{
 		private static StaticSingleton instance = new StaticSingleton();
@@ -119,9 +119,9 @@ class StaticSingleton{
 }
 
 /**
- * ²âÊÔ
+ * æµ‹è¯•
  * @author cd
- * @date 2019Äê3ÔÂ25ÈÕ ÏÂÎç2:44:35
+ * @date 2019å¹´3æœˆ25æ—¥ ä¸‹åˆ2:44:35
  * @desc
  */
 class SerSingleton implements Serializable{
@@ -144,7 +144,7 @@ class SerSingleton implements Serializable{
 		System.out.println("createString is SerSingleton");
 	}
 	
-	private Object readResolve(){//×èÖ¹Éú³ÉĞÂµÄÊµÀı£¬×ÜÊÇ·µ»Øµ±Ç°¶ÔÏó
+	private Object readResolve(){//é˜»æ­¢ç”Ÿæˆæ–°çš„å®ä¾‹ï¼Œæ€»æ˜¯è¿”å›å½“å‰å¯¹è±¡
 		return instance;
 	}
 	
@@ -152,13 +152,13 @@ class SerSingleton implements Serializable{
 	public static void test() throws IOException, ClassNotFoundException{
 		SerSingleton ser = null;
 		SerSingleton s = SerSingleton.getInstance();
-		//ÏÖ½«ÊµÀı´®ĞĞ»¯µ½ÎÄ¼ş
+		//ç°å°†å®ä¾‹ä¸²è¡ŒåŒ–åˆ°æ–‡ä»¶
 		FileOutputStream fos = new FileOutputStream("SerSingleton.txt");
 		ObjectOutputStream oos = new ObjectOutputStream(fos);
 		oos.writeObject(s);
 		oos.flush();
 		oos.close();
-		//´ÓÎÄ¼ş¶Á³öÔ­ÓĞµÄµ¥ÀıÀà
+		//ä»æ–‡ä»¶è¯»å‡ºåŸæœ‰çš„å•ä¾‹ç±»
 		FileInputStream fis = new FileInputStream("SerSingleton.txt");
 		ObjectInputStream ois = new ObjectInputStream(fis);
 		ser = (SerSingleton) ois.readObject();

@@ -1,23 +1,23 @@
 package com.cd.chapter02.factory.abstractfactory;
 
 /**
- * @description: ³éÏó»ÆÉ«ÈË
+ * @description: æŠ½è±¡é»„è‰²äºº
  * @author: Mr.Wang
  * @create: 2019-03-27 22:23
  **/
 public abstract class AbstractYellowHuman implements Human{
 
     public void laugh() {
-        System.out.println("»ÆÈË»áĞ¦");
+        System.out.println("é»„äººä¼šç¬‘");
     }
 
 
     public void cry() {
-        System.out.println("»ÆÈË»á¿Ş");
+        System.out.println("é»„äººä¼šå“­");
     }
 
 
     public void talk() {
-        System.out.println("»ÆÈË»áËµ»°");
+        System.out.println("é»„äººä¼šè¯´è¯");
     }
 }

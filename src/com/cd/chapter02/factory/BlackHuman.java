@@ -1,24 +1,24 @@
 package com.cd.chapter02.factory;
 
 /**
- * @description: ºÚÈË
+ * @description: é»‘äºº
  * @author: Mr.Wang
  * @create: 2019-03-27 21:18
  **/
 public class BlackHuman implements Human {
     @Override
     public void laugh() {
-        System.out.println("ºÚÈË»áĞ¦");
+        System.out.println("é»‘äººä¼šç¬‘");
     }
 
     @Override
     public void cry() {
-        System.out.println("ºÚÈË»á¿Ş");
+        System.out.println("é»‘äººä¼šå“­");
     }
 
     @Override
     public void talk() {
-        System.out.println("ºÚÈË»áËµ»°");
+        System.out.println("é»‘äººä¼šè¯´è¯");
     }
 
 }

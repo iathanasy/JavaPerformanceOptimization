@@ -18,8 +18,8 @@ import javassist.util.proxy.ProxyObject;
 /**
  * 
  * @author cd
- * @date 2019Äê3ÔÂ25ÈÕ ÏÂÎç3:31:47
- * @desc Javassist ´úÀí
+ * @date 2019å¹´3æœˆ25æ—¥ ä¸‹åˆ3:31:47
+ * @desc Javassist ä»£ç†
  */
 public class JavassistDynDbQueryHandler implements MethodHandler{
 	IDBQuery real = null;
@@ -32,40 +32,40 @@ public class JavassistDynDbQueryHandler implements MethodHandler{
 	}
 	
 	/**
-	 * 1.´úÀí¹¤³§Ä£Ê½
+	 * 1.ä»£ç†å·¥å‚æ¨¡å¼
 	 * @return
 	 * @throws Exception
 	 */
 	public static IDBQuery createJavassistDynProxy() throws Exception{
 		ProxyFactory proxyFactory = new ProxyFactory();
-		proxyFactory.setInterfaces(new Class[]{IDBQuery.class});//Ö¸¶¨½Ó¿Ú
+		proxyFactory.setInterfaces(new Class[]{IDBQuery.class});//æŒ‡å®šæ¥å£
 		Class proxyClass = proxyFactory.createClass();
 		IDBQuery javassistProxy = (IDBQuery) proxyClass.newInstance();//
-		((ProxyObject)javassistProxy).setHandler(new JavassistDynDbQueryHandler()); //Ö¸¶¨handler´¦ÀíÆ÷
+		((ProxyObject)javassistProxy).setHandler(new JavassistDynDbQueryHandler()); //æŒ‡å®šhandlerå¤„ç†å™¨
 		return javassistProxy;
 	}
 	
 	/**
-	 * ×Ö½ÚÂë·½Ê½
+	 * å­—èŠ‚ç æ–¹å¼
 	 * @return
 	 * @throws NotFoundException 
 	 */
 	public static IDBQuery createJavassistBytecodeDynamicProxy() throws Exception{
 		ClassPool mPool = new ClassPool(true);
-		//¶¨ÒåÀàÃû
+		//å®šä¹‰ç±»å
 		CtClass mCtc = mPool.makeClass(IDBQuery.class.getName()+ "Javassist-BytecodeProxy");
-		//ĞèÒªÊµÏÖµÄ½Ó¿Ú
+		//éœ€è¦å®ç°çš„æ¥å£
 		mCtc.addInterface(mPool.get(IDBQuery.class.getName()));
-		//Ìí¼Ó¹¹Ôìº¯Êı
+		//æ·»åŠ æ„é€ å‡½æ•°
 		mCtc.addConstructor(CtNewConstructor.defaultConstructor(mCtc));
-		//Ìí¼ÓÀàµÄ×Ö¶ÎĞÅÏ¢ Ê¹ÓÃ¶¯Ì¬Java´úÂë
+		//æ·»åŠ ç±»çš„å­—æ®µä¿¡æ¯ ä½¿ç”¨åŠ¨æ€Javaä»£ç 
 		mCtc.addField(CtField.make("public " + IDBQuery.class.getName() +" real;", mCtc));
 		String dbqueryname = DBQuery.class.getName();
-		//Ìí¼Ó·½·¨£¬ÕâÀïÊ¹ÓÃ¶¯Ì¬Java´úÂëÖ¸¶¨ÄÚ²¿Âß¼­
+		//æ·»åŠ æ–¹æ³•ï¼Œè¿™é‡Œä½¿ç”¨åŠ¨æ€Javaä»£ç æŒ‡å®šå†…éƒ¨é€»è¾‘
 		mCtc.addMethod(CtMethod.make("public String request() { if(real == null) real = new "+dbqueryname +"(); return real.request();}", mCtc));
-		//»ùÓÚÒÔÉÏĞÅÏ¢Éú³É¶¯Ì¬Àà
+		//åŸºäºä»¥ä¸Šä¿¡æ¯ç”ŸæˆåŠ¨æ€ç±»
 		Class pc = mCtc.toClass();
-		//Éú³É¶¯Ì¬ÀàµÄÊµÀı
+		//ç”ŸæˆåŠ¨æ€ç±»çš„å®ä¾‹
 		IDBQuery bytecodeProxy = (IDBQuery) pc.newInstance();
 		return bytecodeProxy;
 	}

@@ -1,23 +1,23 @@
 package com.cd.chapter02.factory;
 
 /**
- * @description: ª∆»À
+ * @description: ÈªÑ‰∫∫
  * @author: Mr.Wang
  * @create: 2019-03-27 21:15
  **/
 public class YellowHuman implements Human{
     @Override
     public void laugh() {
-        System.out.println("ª∆»Àª·–¶");
+        System.out.println("ÈªÑ‰∫∫‰ºöÁ¨ë");
     }
 
     @Override
     public void cry() {
-        System.out.println("ª∆»Àª·øﬁ");
+        System.out.println("ÈªÑ‰∫∫‰ºöÂì≠");
     }
 
     @Override
     public void talk() {
-        System.out.println("ª∆»Àª·Àµª∞");
+        System.out.println("ÈªÑ‰∫∫‰ºöËØ¥ËØù");
     }
 }

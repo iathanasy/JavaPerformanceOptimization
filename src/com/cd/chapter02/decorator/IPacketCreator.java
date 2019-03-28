@@ -2,10 +2,10 @@ package com.cd.chapter02.decorator;
 /**
  * 
  * @author cd
- * @date 2019Äê3ÔÂ26ÈÕ ÉÏÎç9:48:45
- * @desc ×°ÊÎ½Ó¿Ú
+ * @date 2019å¹´3æœˆ26æ—¥ ä¸Šåˆ9:48:45
+ * @desc è£…é¥°æ¥å£
  */
 public interface IPacketCreator {
 
-	String handlerContent();//ÓÃÓÚÄÚÈİ´¦Àí
+	String handlerContent();//ç”¨äºå†…å®¹å¤„ç†
 }

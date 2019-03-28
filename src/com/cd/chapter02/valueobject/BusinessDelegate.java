@@ -8,12 +8,12 @@ import java.rmi.RemoteException;
 /**
  * 
  * @author cd
- * @date 2019Äê3ÔÂ26ÈÕ ÏÂÎç4:56:37
- * @desc ÒµÎñ´úÀíÄ£Ê½
+ * @date 2019å¹´3æœˆ26æ—¥ ä¸‹åˆ4:56:37
+ * @desc ä¸šåŠ¡ä»£ç†æ¨¡å¼
  */
 public class BusinessDelegate {
 
-	IOrderManager usermanager = null;//·â×°Ô¶³Ì·½·¨µ÷ÓÃµÄÁ÷³Ì
+	IOrderManager usermanager = null;//å°è£…è¿œç¨‹æ–¹æ³•è°ƒç”¨çš„æµç¨‹
 	
 	public BusinessDelegate(){
 		try {
@@ -29,8 +29,8 @@ public class BusinessDelegate {
 	}
 	
 	public boolean checkUser(int uid) throws RemoteException{
-		//µ±Ç°¶ÔÏó±»¶à¸ö¿Í»§¶Ë¹²Ïí
-		//¿ÉÒÔÔÚ±¾µØ»º´æÖĞĞ£ÑéÓÃ»§
+		//å½“å‰å¯¹è±¡è¢«å¤šä¸ªå®¢æˆ·ç«¯å…±äº«
+		//å¯ä»¥åœ¨æœ¬åœ°ç¼“å­˜ä¸­æ ¡éªŒç”¨æˆ·
 		if(!checkUserFromCache(uid))
 			return usermanager.checkUser(1);
 		return true;
@@ -41,8 +41,8 @@ public class BusinessDelegate {
 	}
 	
 	public Order getOrder(int oid) throws RemoteException{
-		//¿ÉÒÔÔÚ±¾µØ»º´æÖĞ»ñÈ¡¶©µ¥
-		//¼õÉÙÔ¶³Ì·½·¨µ÷ÓÃ´ÎÊı
+		//å¯ä»¥åœ¨æœ¬åœ°ç¼“å­˜ä¸­è·å–è®¢å•
+		//å‡å°‘è¿œç¨‹æ–¹æ³•è°ƒç”¨æ¬¡æ•°
 		Order order = getOrderFromCache(oid);
 		if(order == null)
 			return usermanager.getOrder(oid);
@@ -50,9 +50,9 @@ public class BusinessDelegate {
 	}
 	
 	public boolean updateOrder(Order order) throws RemoteException{
-		//±©Â¶¸øÕ¹Ê¾²ã·½·¨
-		//·â×°ÁËÒµÎñÁ÷³Ì
-		//¿ÉÄÜÔÚÔ¶³ÌÖĞÖ´ĞĞ
+		//æš´éœ²ç»™å±•ç¤ºå±‚æ–¹æ³•
+		//å°è£…äº†ä¸šåŠ¡æµç¨‹
+		//å¯èƒ½åœ¨è¿œç¨‹ä¸­æ‰§è¡Œ
 		if(checkUser(1)){
 			Order o = getOrder(1);
 			o.setNumber(10);

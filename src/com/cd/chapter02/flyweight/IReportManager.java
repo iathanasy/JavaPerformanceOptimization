@@ -2,8 +2,8 @@ package com.cd.chapter02.flyweight;
 /**
  * 
  * @author cd
- * @date 2019Äê3ÔÂ25ÈÕ ÏÂÎç5:12:19
- * @desc ÏíÔª½Ó¿Ú
+ * @date 2019å¹´3æœˆ25æ—¥ ä¸‹åˆ5:12:19
+ * @desc äº«å…ƒæ¥å£
  */
 public interface IReportManager {
 

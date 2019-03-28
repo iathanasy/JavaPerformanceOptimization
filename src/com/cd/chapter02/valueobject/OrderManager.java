@@ -6,7 +6,7 @@ import java.rmi.server.UnicastRemoteObject;
 /**
  * 
  * @author cd
- * @date 2019Äê3ÔÂ26ÈÕ ÏÂÎç4:14:31
+ * @date 2019å¹´3æœˆ26æ—¥ ä¸‹åˆ4:14:31
  * @desc
  */
 public class OrderManager extends UnicastRemoteObject implements IOrderManager{
@@ -17,19 +17,19 @@ public class OrderManager extends UnicastRemoteObject implements IOrderManager{
 
 	@Override
 	public String getClientName(int id) throws RemoteException{
-		//·µ»Ø¿Í»§µÄ¶©µ¥Ãû
+		//è¿”å›å®¢æˆ·çš„è®¢å•å
 		return "billy";
 	}
 
 	@Override
 	public String getProdName(int id) throws RemoteException{
-		//·µ»ØÉÌÆ·Ãû×Ö
+		//è¿”å›å•†å“åå­—
 		return "desk";
 	}
 
 	@Override
 	public int getNumber(int id) throws RemoteException{
-		//·µ»ØÊıÁ¿
+		//è¿”å›æ•°é‡
 		return 20;
 	}
 
@@ -50,7 +50,7 @@ public class OrderManager extends UnicastRemoteObject implements IOrderManager{
 
 	@Override
 	public void updateOrder(Order o) throws RemoteException{
-		System.out.println("ĞŞ¸ÄÁË¶ÔÏó£º"+ o);
+		System.out.println("ä¿®æ”¹äº†å¯¹è±¡ï¼š"+ o);
 	}
  
 }

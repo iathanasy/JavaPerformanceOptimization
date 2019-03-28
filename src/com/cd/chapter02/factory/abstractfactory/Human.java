@@ -6,8 +6,8 @@ package com.cd.chapter02.factory.abstractfactory;
  * @create: 2019-03-27 22:21
  **/
 public interface Human {
-    void laugh();//Óä¿ìµÄ
-    void cry();//¿Ş
-    void talk();//Ëµ»°
-    void sex();//ĞÔ±ğ
+    void laugh();//æ„‰å¿«çš„
+    void cry();//å“­
+    void talk();//è¯´è¯
+    void sex();//æ€§åˆ«
 }

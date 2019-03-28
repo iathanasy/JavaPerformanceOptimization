@@ -2,8 +2,8 @@ package com.cd.chapter02.observer;
 /**
  * 
  * @author cd
- * @date 2019Äê3ÔÂ26ÈÕ ÉÏÎç11:55:12
- * @desc ¾ßÌåµÄ¹Û²ìÕß
+ * @date 2019å¹´3æœˆ26æ—¥ ä¸Šåˆ11:55:12
+ * @desc å…·ä½“çš„è§‚å¯Ÿè€…
  */
 public class ConcreteObserver implements IObserver{
 

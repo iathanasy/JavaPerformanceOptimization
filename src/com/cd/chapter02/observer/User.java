@@ -2,8 +2,8 @@ package com.cd.chapter02.observer;
 /**
  * 
  * @author cd
- * @date 2019Äê3ÔÂ26ÈÕ ÉÏÎç11:05:05
- * @desc ¹Û²ìµÄ¶ÔÏó ÓÃ»§ĞÅÏ¢
+ * @date 2019å¹´3æœˆ26æ—¥ ä¸Šåˆ11:05:05
+ * @desc è§‚å¯Ÿçš„å¯¹è±¡ ç”¨æˆ·ä¿¡æ¯
  */
 public class User {
 	private long id;

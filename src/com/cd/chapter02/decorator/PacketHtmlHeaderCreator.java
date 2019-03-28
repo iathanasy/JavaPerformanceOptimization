@@ -3,8 +3,8 @@ package com.cd.chapter02.decorator;
 /**
  * 
  * @author cd
- * @date 2019Äê3ÔÂ26ÈÕ ÉÏÎç9:59:55
- * @desc ¾ßÌåµÄ×°ÊÎÆ÷ £º Íê³ÉºËĞÄ·¢²¼ÄÚÈİ½øĞĞHtml¸ñÊ½»¯
+ * @date 2019å¹´3æœˆ26æ—¥ ä¸Šåˆ9:59:55
+ * @desc å…·ä½“çš„è£…é¥°å™¨ ï¼š å®Œæˆæ ¸å¿ƒå‘å¸ƒå†…å®¹è¿›è¡ŒHtmlæ ¼å¼åŒ–
  */
 public class PacketHtmlHeaderCreator extends PacketDecorator{
 
@@ -13,8 +13,8 @@ public class PacketHtmlHeaderCreator extends PacketDecorator{
 	}
 	
 	/**
-	 * ÊµÏÖ¸¸Àà½Ó¿Ú·½·¨
-	 * ½«¸ø¶¨Êı¾İ·â×°³ÉHTML
+	 * å®ç°çˆ¶ç±»æ¥å£æ–¹æ³•
+	 * å°†ç»™å®šæ•°æ®å°è£…æˆHTML
 	 */
 	@Override
 	public String handlerContent() {

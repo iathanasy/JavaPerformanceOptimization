@@ -7,18 +7,18 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 		IPacketCreator pc = new PacketHttpHeaderCreator(
 							new PacketHtmlHeaderCreator(
-							new PacketBodyCreator()));//ºËĞÄ×é¼ş×îÏÈ¹¹Ôì
+							new PacketBodyCreator()));//æ ¸å¿ƒç»„ä»¶æœ€å…ˆæ„é€ 
 		System.out.println(pc.handlerContent());
-		//OutputStream //Ê¹ÓÃµÄ×°ÊÎÕßÄ£Ê½
-		//OutputStream //Î¬»¤ºËĞÄ×é¼ş component ¶ÔÏó
-		//FileOutputStream //¾ßÌå×é¼ş ÏµÍ³ºËĞÄÀà
-		//FilterOutputStream //×°ÊÎÕß
-		//BufferedOutputStream //¾ßÌåµÄ×°ÊÎÆ÷  Ôö¼Ó»º³å £¬ÓÅ»¯IOĞÔÄÜ
-		//DataOutputStream //¾ßÌå×°ÊÎÆ÷   Ôö¼Ó¶Ô¶àÖÖÊı¾İÀàĞÍµÄĞ´²Ù×÷Ö§³Ö
+		//OutputStream //ä½¿ç”¨çš„è£…é¥°è€…æ¨¡å¼
+		//OutputStream //ç»´æŠ¤æ ¸å¿ƒç»„ä»¶ component å¯¹è±¡
+		//FileOutputStream //å…·ä½“ç»„ä»¶ ç³»ç»Ÿæ ¸å¿ƒç±»
+		//FilterOutputStream //è£…é¥°è€…
+		//BufferedOutputStream //å…·ä½“çš„è£…é¥°å™¨  å¢åŠ ç¼“å†² ï¼Œä¼˜åŒ–IOæ€§èƒ½
+		//DataOutputStream //å…·ä½“è£…é¥°å™¨   å¢åŠ å¯¹å¤šç§æ•°æ®ç±»å‹çš„å†™æ“ä½œæ”¯æŒ
 		
-		//Éú³ÉÒ»¸ö´ø»º³åµÄ¶ÔÏóÁ÷
+		//ç”Ÿæˆä¸€ä¸ªå¸¦ç¼“å†²çš„å¯¹è±¡æµ
 		//DataOutputStream dout = new DataOutputStream(new BufferedOutputStream(new FileOutputStream("a.txt"))); //spend: 7
-		//Ã»ÓĞ»º³å¹¦ÄÜµÄÁ÷¶ÔÏó
+		//æ²¡æœ‰ç¼“å†²åŠŸèƒ½çš„æµå¯¹è±¡
 		DataOutputStream dout = new DataOutputStream(new FileOutputStream("a.txt")); //spend: 229
 		long begin = System.currentTimeMillis();
 		for (int i = 0; i < 100000; i++) {
@@ -26,18 +26,18 @@ public class Main {
 		}
 		System.out.println("spend: "+ (System.currentTimeMillis() - begin));
 		
-		//×°ÊÎÕßÄ£Ê½ ioÁ÷³Ì
+		//è£…é¥°è€…æ¨¡å¼ ioæµç¨‹
 		/**
 		 * Main -> DataOutputStream -> BufferedOutputStream -> FileOutputStream
 		 * 	 writeLong     ->       write            ->      write      
-		 * 														BufferedOutputStreamÍ¨¹ıflushBuffer()µ÷ÓÃwrite()Ìá¹©ĞÔÄÜ 
+		 * 														BufferedOutputStreamé€šè¿‡flushBuffer()è°ƒç”¨write()æä¾›æ€§èƒ½ 
 		 *  return         <-         return        <-       return
 		 *  
 		 *  
-		 *  ÔÚFileOutputStream.write() Ö®Ç°»áµ÷ÓÃ »áÊ×ÏÈµ÷ÓÃ BufferedOutputStream.write()   116 line
+		 *  åœ¨FileOutputStream.write() ä¹‹å‰ä¼šè°ƒç”¨ ä¼šé¦–å…ˆè°ƒç”¨ BufferedOutputStream.write()   116 line
 		 *  
-		 *  ¿ÉÒÔ¿´µ½ ²¢²»ÊÇÃ¿´Î BufferedOutputStream.write() µ÷ÓÃ¶¼»áÈ¥´ÅÅÌĞ´ÈëÊı¾İ£¬¶øÊÇ½«Êı¾İĞ´Èë»º´æÖĞ£¬
-		 *  µ±»º´æÂúÊ±²Å»áÈ¥µ÷ÓÃ FileOutputStream.write()·½·¨ Êµ¼ÊĞ´ÈëÊı¾İ£¬ÒÔ´ËÊµÏÖĞÔÄÜ×é¼şÓë¹¦ÄÜ×é¼şÍêÃÀ·ÖÀë
+		 *  å¯ä»¥çœ‹åˆ° å¹¶ä¸æ˜¯æ¯æ¬¡ BufferedOutputStream.write() è°ƒç”¨éƒ½ä¼šå»ç£ç›˜å†™å…¥æ•°æ®ï¼Œè€Œæ˜¯å°†æ•°æ®å†™å…¥ç¼“å­˜ä¸­ï¼Œ
+		 *  å½“ç¼“å­˜æ»¡æ—¶æ‰ä¼šå»è°ƒç”¨ FileOutputStream.write()æ–¹æ³• å®é™…å†™å…¥æ•°æ®ï¼Œä»¥æ­¤å®ç°æ€§èƒ½ç»„ä»¶ä¸åŠŸèƒ½ç»„ä»¶å®Œç¾åˆ†ç¦»
 		 */
 	}
 }

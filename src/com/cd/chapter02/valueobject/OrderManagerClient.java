@@ -9,14 +9,14 @@ public class OrderManagerClient {
 			/*IOrderManager usermanager = (IOrderManager) Naming.lookup("OrderManager");
 			long begin = System.currentTimeMillis();
 			for (int i = 0; i < 1000; i++) {
-				usermanager.getOrder(i);// Value ObjectÄ£Ê½
+				usermanager.getOrder(i);// Value Objectæ¨¡å¼
 			}
 			//getOrder spend: 209
 			System.out.println("getOrder spend: "+ (System.currentTimeMillis() - begin));
 			begin = System.currentTimeMillis();
 			
 			for (int i = 0; i < 1000; i++) {
-				usermanager.getClientName(i);//Í¨¹ı¶à´Î½»»¥»ñÈ¡Êı¾İ
+				usermanager.getClientName(i);//é€šè¿‡å¤šæ¬¡äº¤äº’è·å–æ•°æ®
 				usermanager.getNumber(i);
 				usermanager.getProdName(i);
 			}
@@ -25,9 +25,9 @@ public class OrderManagerClient {
 			System.out.println("3 Method call spend: "+ (System.currentTimeMillis() - begin));
 			System.out.println(usermanager.getOrder(0).getClientName());*/
 			
-			//ÓÉ´Ë¿É¼û¶ÔÊı¾İ´«Êä½øĞĞÓĞĞ§µÄ·â×° ¿ÉÒÔÃ÷ÏÔµÄÌáÉıÔ¶³Ì·½·¨µ÷ÓÃµÄĞÔÄÜ
+			//ç”±æ­¤å¯è§å¯¹æ•°æ®ä¼ è¾“è¿›è¡Œæœ‰æ•ˆçš„å°è£… å¯ä»¥æ˜æ˜¾çš„æå‡è¿œç¨‹æ–¹æ³•è°ƒç”¨çš„æ€§èƒ½
 			
-			//ÒµÎñ´úÀí¶ÔÏó¿ÉÒÔÔö¼Ó»º´æ£¬ ´Ó¶ø¼õÉÙÔ¶³Ì·½·¨µ÷ÓÃµÄ´ÎÊı
+			//ä¸šåŠ¡ä»£ç†å¯¹è±¡å¯ä»¥å¢åŠ ç¼“å­˜ï¼Œ ä»è€Œå‡å°‘è¿œç¨‹æ–¹æ³•è°ƒç”¨çš„æ¬¡æ•°
 			/*BusinessDelegate bd = new BusinessDelegate();
 			Order o = bd.getOrder(11);
 			o.setNumber(11);

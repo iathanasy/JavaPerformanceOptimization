@@ -3,12 +3,12 @@ package com.cd.chapter02.flyweight;
 /**
  * 
  * @author cd
- * @date 2019Äê3ÔÂ25ÈÕ ÏÂÎç5:18:48
- * @desc ¾ßÌåÏíÔªÀà  
+ * @date 2019å¹´3æœˆ25æ—¥ ä¸‹åˆ5:18:48
+ * @desc å…·ä½“äº«å…ƒç±»  
  */
 public class EmployeeReportManager implements IReportManager{
-	protected String tenantId = null;//×â»§Id
-	//Ô±¹¤±¨±í
+	protected String tenantId = null;//ç§Ÿæˆ·Id
+	//å‘˜å·¥æŠ¥è¡¨
 	public EmployeeReportManager(String tenantId){
 		this.tenantId = tenantId;
 	}

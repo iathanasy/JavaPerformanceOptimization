@@ -3,7 +3,7 @@
  */
 /**
  * @author cd
- * @date 2019Äê3ÔÂ26ÈÕ ÏÂÎç4:09:30
- * @desc Value Object Ä£Ê½
+ * @date 2019å¹´3æœˆ26æ—¥ ä¸‹åˆ4:09:30
+ * @desc Value Object æ¨¡å¼
  */
 package com.cd.chapter02.valueobject;

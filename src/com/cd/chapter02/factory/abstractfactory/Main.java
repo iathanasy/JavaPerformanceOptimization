@@ -8,14 +8,14 @@ package com.cd.chapter02.factory.abstractfactory;
 public class Main {
 
     public static void main(String[] args) {
-        //ÖÆÔìÄĞĞÔ
+        //åˆ¶é€ ç”·æ€§
         HumanFactory maleHumanFactory = new MaleHumanFactory();
-        //ÖÆÔìÅ®ĞÔ
+        //åˆ¶é€ å¥³æ€§
         HumanFactory femaleHumanFactory = new FemaleHumanFactory();
 
-        //¿ªÊ¼ÖÆÔì ÄĞ»ÆÈË
+        //å¼€å§‹åˆ¶é€  ç”·é»„äºº
         Human maleYellowHuman = maleHumanFactory.createYellowHuman();
-        //¿ªÊ¼ÖÆÔì Å®»ÆÈË
+        //å¼€å§‹åˆ¶é€  å¥³é»„äºº
         Human femaleYellowHuman = femaleHumanFactory.createYellowHuman();
 
         maleYellowHuman.cry();
@@ -28,6 +28,6 @@ public class Main {
         femaleYellowHuman.talk();
         femaleYellowHuman.sex();
 
-        //ÏÂÃæ¿ÉÒÔÖÆÔìÆäËûÑÕÉ«µÄÈË...
+        //ä¸‹é¢å¯ä»¥åˆ¶é€ å…¶ä»–é¢œè‰²çš„äºº...
     }
 }

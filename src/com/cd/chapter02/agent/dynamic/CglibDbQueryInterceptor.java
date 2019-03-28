@@ -12,14 +12,14 @@ import net.sf.cglib.proxy.MethodProxy;
 /**
  * 
  * @author cd
- * @date 2019Äê3ÔÂ25ÈÕ ÏÂÎç3:20:56
- * @desc CGLIBÉú³É¶¯Ì¬´úÀí
+ * @date 2019å¹´3æœˆ25æ—¥ ä¸‹åˆ3:20:56
+ * @desc CGLIBç”ŸæˆåŠ¨æ€ä»£ç†
  */
 public class CglibDbQueryInterceptor implements MethodInterceptor{
 	IDBQuery real = null;
 
 	/**
-	 * ÕæÊµÖ÷Ìâ
+	 * çœŸå®ä¸»é¢˜
 	 */
 	public Object intercept(Object arg0, Method arg1, Object[] arg2,
 			MethodProxy arg3) throws Throwable {
@@ -29,14 +29,14 @@ public class CglibDbQueryInterceptor implements MethodInterceptor{
 	}
 	
 	/**
-	 * ´úÀí
+	 * ä»£ç†
 	 * @return
 	 */
 	public static IDBQuery createCglibProxy(){
 		Enhancer enhancer = new Enhancer();
-		enhancer.setCallback(new CglibDbQueryInterceptor());//Ö¸¶¨ÇĞÈëÆ÷£¬¶¨Òå´úÀíÀàÂß¼­
-		enhancer.setInterfaces(new Class[]{IDBQuery.class});//Ö¸¶¨ÊµÏÖµÄ½Ó¿Ú
-		IDBQuery cglibProxy = (IDBQuery) enhancer.create();//Éú³É´úÀíÀàµÄÊµÀı
+		enhancer.setCallback(new CglibDbQueryInterceptor());//æŒ‡å®šåˆ‡å…¥å™¨ï¼Œå®šä¹‰ä»£ç†ç±»é€»è¾‘
+		enhancer.setInterfaces(new Class[]{IDBQuery.class});//æŒ‡å®šå®ç°çš„æ¥å£
+		IDBQuery cglibProxy = (IDBQuery) enhancer.create();//ç”Ÿæˆä»£ç†ç±»çš„å®ä¾‹
 		return cglibProxy;
 	}
 

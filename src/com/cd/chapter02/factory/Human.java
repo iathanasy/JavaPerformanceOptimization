@@ -1,12 +1,12 @@
 package com.cd.chapter02.factory;
 
 /**
- * @description: ÈËÀà
+ * @description: äººç±»
  * @author: Mr.Wang
  * @create: 2019-03-27 21:13
  **/
 public interface Human {
-    void laugh();//Óä¿ìµÄ
-    void cry();//¿Ş
-    void talk();//Ëµ»°
+    void laugh();//æ„‰å¿«çš„
+    void cry();//å“­
+    void talk();//è¯´è¯
 }

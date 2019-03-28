@@ -1,7 +1,7 @@
 package com.cd.chapter02.factory.abstractfactory;
 
 /**
- * @description: ÈËÀàĞÍÃ¶¾Ù
+ * @description: äººç±»å‹æšä¸¾
  * @author: Mr.Wang
  * @create: 2019-03-27 22:32
  **/
@@ -16,7 +16,7 @@ public enum HumanEnum {
     BlackFemaleHuman("com.cd.chapter02.factory.abstractfactory.BlackFemaleHuman");
 
     private String value="";
-    //¶¨Òå¹¹Ôìº¯Êı£¬Ä¿µÄÊÇData(value)ÀàĞÍÆ¥Åä
+    //å®šä¹‰æ„é€ å‡½æ•°ï¼Œç›®çš„æ˜¯Data(value)ç±»å‹åŒ¹é…
     private HumanEnum(String value){
         this.value = value;
     }
@@ -26,7 +26,7 @@ public enum HumanEnum {
     }
 
     /*
-     * java enumÀàĞÍ¾¡Á¿¼òµ¥Ê¹ÓÃ£¬¾¡Á¿²»ÒªÊ¹ÓÃ¶àÌ¬¡¢¼Ì³ĞµÈ·½·¨
-     * ±Ï¾¹ÓÃClassÍêÈ«¿ÉÒÔ´úÌæenum
+     * java enumç±»å‹å°½é‡ç®€å•ä½¿ç”¨ï¼Œå°½é‡ä¸è¦ä½¿ç”¨å¤šæ€ã€ç»§æ‰¿ç­‰æ–¹æ³•
+     * æ¯•ç«Ÿç”¨Classå®Œå…¨å¯ä»¥ä»£æ›¿enum
      */
 }

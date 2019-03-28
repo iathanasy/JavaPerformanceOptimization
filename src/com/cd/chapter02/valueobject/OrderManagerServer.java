@@ -7,9 +7,9 @@ public class OrderManagerServer {
 
 	public static void main(String[] args) {
 		try {
-			LocateRegistry.createRegistry(1099);//×¢²áRMI¶Ë¿Ú
-			IOrderManager usermanager = new OrderManager();//RMIÔ¶³Ì¶ÔÏó
-			Naming.rebind("OrderManager", usermanager);//°ó¶¨RMI¶ÔÏó
+			LocateRegistry.createRegistry(1099);//æ³¨å†ŒRMIç«¯å£
+			IOrderManager usermanager = new OrderManager();//RMIè¿œç¨‹å¯¹è±¡
+			Naming.rebind("OrderManager", usermanager);//ç»‘å®šRMIå¯¹è±¡
 			System.out.println("OrderManager is ready.");
 		} catch (Exception e) {
 			

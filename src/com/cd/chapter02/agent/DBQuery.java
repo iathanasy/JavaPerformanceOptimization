@@ -2,13 +2,13 @@ package com.cd.chapter02.agent;
 /**
  * 
  * @author cd
- * @date 2019Äê3ÔÂ25ÈÕ ÏÂÎç2:54:27
- * @desc ÕæÊµÖ÷Ìâ  ÖØÁ¿¼¶¶ÔÏó ¹¹Ôì¿ÉÄÜ»á±È½ÏÂı
+ * @date 2019å¹´3æœˆ25æ—¥ ä¸‹åˆ2:54:27
+ * @desc çœŸå®ä¸»é¢˜  é‡é‡çº§å¯¹è±¡ æ„é€ å¯èƒ½ä¼šæ¯”è¾ƒæ…¢
  */
 public class DBQuery implements IDBQuery{
 	
 	public DBQuery(){
-		//¿ÉÄÜ°üº¬Êı¾İ¿âÁ¬½ÓµÈºÄÊ±²Ù×÷
+		//å¯èƒ½åŒ…å«æ•°æ®åº“è¿æ¥ç­‰è€—æ—¶æ“ä½œ
 		/*try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {

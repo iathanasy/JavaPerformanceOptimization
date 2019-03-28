@@ -2,8 +2,8 @@ package com.cd.chapter02.agent;
 /**
  * 
  * @author cd
- * @date 2019Äê3ÔÂ25ÈÕ ÏÂÎç2:51:26
- * @desc Ö÷Ìâ½Ó¿Ú
+ * @date 2019å¹´3æœˆ25æ—¥ ä¸‹åˆ2:51:26
+ * @desc ä¸»é¢˜æ¥å£
  */
 public interface IDBQuery {
 	String request();

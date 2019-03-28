@@ -3,8 +3,8 @@ package com.cd.chapter02.decorator;
 /**
  * 
  * @author cd
- * @date 2019Äê3ÔÂ26ÈÕ ÉÏÎç9:53:18
- * @desc ×°ÊÎÕß  Î¬»¤ºËĞÄ×é¼ş component ¶ÔÏó
+ * @date 2019å¹´3æœˆ26æ—¥ ä¸Šåˆ9:53:18
+ * @desc è£…é¥°è€…  ç»´æŠ¤æ ¸å¿ƒç»„ä»¶ component å¯¹è±¡
  */
 public abstract class PacketDecorator implements IPacketCreator{
 

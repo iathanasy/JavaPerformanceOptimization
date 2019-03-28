@@ -4,8 +4,8 @@ import com.cd.chapter02.agent.IDBQuery;
 
 /**
  * @author cd
- * @date 2019Äê3ÔÂ25ÈÕ ÏÂÎç3:53:09
- * @desc ¶¯Ì¬´úÀí²âÊÔ
+ * @date 2019å¹´3æœˆ25æ—¥ ä¸‹åˆ3:53:09
+ * @desc åŠ¨æ€ä»£ç†æµ‹è¯•
  */
 public class Main {
 
@@ -13,7 +13,7 @@ public class Main {
 	public static void main(String[] args) throws Exception {
 		IDBQuery d = null;
 		long begin = System.currentTimeMillis();
-		d = JdkDbQueryHandler.createJdkProxy(); //²âÊÔJDK¶¯Ì¬´úÀí
+		d = JdkDbQueryHandler.createJdkProxy(); //æµ‹è¯•JDKåŠ¨æ€ä»£ç†
 		System.out.println("createJdkProxy: "+ (System.currentTimeMillis() - begin));
 		System.out.println("JdkProxy class: "+ d.getClass().getName());
 		begin = System.currentTimeMillis();
@@ -23,7 +23,7 @@ public class Main {
 		System.out.println("callJdkProxy: "+ (System.currentTimeMillis() - begin));
 		
 		begin = System.currentTimeMillis();
-		d = CglibDbQueryInterceptor.createCglibProxy(); //²âÊÔCGLIB¶¯Ì¬´úÀí
+		d = CglibDbQueryInterceptor.createCglibProxy(); //æµ‹è¯•CGLIBåŠ¨æ€ä»£ç†
 		System.out.println("createCglibProxy: "+ (System.currentTimeMillis() - begin));
 		System.out.println("CglibProxy class: "+ d.getClass().getName());
 		begin = System.currentTimeMillis();
@@ -33,7 +33,7 @@ public class Main {
 		System.out.println("callCglibProxy: "+ (System.currentTimeMillis() - begin));
 		
 		begin = System.currentTimeMillis();
-		d = JavassistDynDbQueryHandler.createJavassistDynProxy(); //²âÊÔJavassist¶¯Ì¬´úÀí
+		d = JavassistDynDbQueryHandler.createJavassistDynProxy(); //æµ‹è¯•JavassiståŠ¨æ€ä»£ç†
 		System.out.println("createJavassistDynProxy: "+ (System.currentTimeMillis() - begin));
 		System.out.println("JavassistDynProxy class: "+ d.getClass().getName());
 		begin = System.currentTimeMillis();
@@ -43,7 +43,7 @@ public class Main {
 		System.out.println("callJavassistDynProxy: "+ (System.currentTimeMillis() - begin));
 		
 		begin = System.currentTimeMillis();
-		d = JavassistDynDbQueryHandler.createJavassistBytecodeDynamicProxy(); //²âÊÔ Javassist¶¯Ì¬´úÀí ×Ö½ÚÂë·½Ê½
+		d = JavassistDynDbQueryHandler.createJavassistBytecodeDynamicProxy(); //æµ‹è¯• JavassiståŠ¨æ€ä»£ç† å­—èŠ‚ç æ–¹å¼
 		System.out.println("createJavassistBytecodeDynamicProxy: "+ (System.currentTimeMillis() - begin));
 		System.out.println("JavassistBytecodeDynamicProxy class: "+ d.getClass().getName());
 		begin = System.currentTimeMillis();

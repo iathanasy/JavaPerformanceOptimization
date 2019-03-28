@@ -8,7 +8,7 @@ import java.util.Enumeration;
 import java.util.List;
 
 /**
- * @description: ¹¤¾ßÀà
+ * @description: å·¥å…·ç±»
  * @author: Mr.Wang
  * @create: 2019-03-27 21:30
  **/
@@ -16,23 +16,23 @@ public class ClassUtils {
 
     /**
      *
-     * @param c ½Ó¿Ú
-     * @return  ·µ»ØÕâ¸ö½Ó¿ÚµÄËùÓĞÊµÏÖÀà
+     * @param c æ¥å£
+     * @return  è¿”å›è¿™ä¸ªæ¥å£çš„æ‰€æœ‰å®ç°ç±»
      */
     public static List<Class> getAllClassByinterface(Class c){
         List<Class> classList = new ArrayList<Class>();
 
-        if(c.isInterface()){//Èç¹û²»ÊÇ½Ó¿ÚÔò²»´¦Àí
-            String packageName = c.getPackage().getName();//µ±Ç°°üÃû
+        if(c.isInterface()){//å¦‚æœä¸æ˜¯æ¥å£åˆ™ä¸å¤„ç†
+            String packageName = c.getPackage().getName();//å½“å‰åŒ…å
 
             try {
-                //µ±Ç°°üÏÂ ÒÔ¼°×Ó°üÏÂµÄËùÓĞÀà
+                //å½“å‰åŒ…ä¸‹ ä»¥åŠå­åŒ…ä¸‹çš„æ‰€æœ‰ç±»
                 List<Class> allClass = getClasses(packageName);
                 //System.out.println(allClass);
-                //ÅĞ¶ÏÊÇ·ñÊÇÍ¬Ò»¸ö½Ó¿Ú
+                //åˆ¤æ–­æ˜¯å¦æ˜¯åŒä¸€ä¸ªæ¥å£
                 for (int i = 0; i < allClass.size(); i++){
-                    if(c.isAssignableFrom(allClass.get(i))){//ÅĞ¶ÏÊÇ²»ÊÇÒ»¸ö½Ó¿Ú
-                        if(!c.equals(allClass.get(i)))//±¾Éí²»¼Ó½øÈ¥
+                    if(c.isAssignableFrom(allClass.get(i))){//åˆ¤æ–­æ˜¯ä¸æ˜¯ä¸€ä¸ªæ¥å£
+                        if(!c.equals(allClass.get(i)))//æœ¬èº«ä¸åŠ è¿›å»
                             classList.add(allClass.get(i));
                     }
                 }
@@ -47,7 +47,7 @@ public class ClassUtils {
     }
 
     /**
-     * ´ÓÒ»¸ö°üÖĞ²éÕÒ³öËùÓĞµÄÀà£¬ ÔÚJar°üÖĞµÄ²»²éÕÒ
+     * ä»ä¸€ä¸ªåŒ…ä¸­æŸ¥æ‰¾å‡ºæ‰€æœ‰çš„ç±»ï¼Œ åœ¨JaråŒ…ä¸­çš„ä¸æŸ¥æ‰¾
      * @param packageName
      * @return
      */
@@ -70,8 +70,8 @@ public class ClassUtils {
 
     /**
      *
-     * @param directory ÎÄ¼ş
-     * @param packageName °üÃû
+     * @param directory æ–‡ä»¶
+     * @param packageName åŒ…å
      * @return
      */
     private static List<Class> findClasses(File directory, String packageName) throws ClassNotFoundException {

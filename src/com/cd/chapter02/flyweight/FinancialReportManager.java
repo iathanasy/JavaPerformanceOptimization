@@ -2,12 +2,12 @@ package com.cd.chapter02.flyweight;
 /**
  * 
  * @author cd
- * @date 2019Äê3ÔÂ25ÈÕ ÏÂÎç5:14:11
- * @desc ¾ßÌåÏíÔªÀà 
+ * @date 2019å¹´3æœˆ25æ—¥ ä¸‹åˆ5:14:11
+ * @desc å…·ä½“äº«å…ƒç±» 
  */
 public class FinancialReportManager implements IReportManager{
-	protected String tenantId = null;//×â»§ID
-	//²ÆÎñ±¨±í
+	protected String tenantId = null;//ç§Ÿæˆ·ID
+	//è´¢åŠ¡æŠ¥è¡¨
 	public FinancialReportManager(String tenantId){
 		this.tenantId = tenantId;
 	}

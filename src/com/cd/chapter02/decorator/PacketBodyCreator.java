@@ -3,14 +3,14 @@ package com.cd.chapter02.decorator;
 /**
  * 
  * @author cd
- * @date 2019Äê3ÔÂ26ÈÕ ÉÏÎç9:51:12
- * @desc ¾ßÌåµÄ×é¼ş ÏµÍ³ºËĞÄÀà
+ * @date 2019å¹´3æœˆ26æ—¥ ä¸Šåˆ9:51:12
+ * @desc å…·ä½“çš„ç»„ä»¶ ç³»ç»Ÿæ ¸å¿ƒç±»
  */
 public class PacketBodyCreator implements IPacketCreator{
 
 	public String handlerContent() {
 		
-		return "Content of Packet";//¹¹ÔìºËĞÄÊı¾İ£¬µ«²»°üÀ¨¸ñÊ½
+		return "Content of Packet";//æ„é€ æ ¸å¿ƒæ•°æ®ï¼Œä½†ä¸åŒ…æ‹¬æ ¼å¼
 	}
 
 }
