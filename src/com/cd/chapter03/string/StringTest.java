@@ -1,10 +1,10 @@
 package com.cd.chapter03.string;
 /**
- * String ¶ÔÏóµÄ3¸ö»ù±¾ÌØÕ÷£º ²»±äĞÔ¡¢Õë¶Ô³£Á¿³ØµÄÓÅ»¯¡¢ÀàfinalµÄ¶¨Òå
+ * String å¯¹è±¡çš„3ä¸ªåŸºæœ¬ç‰¹å¾ï¼š ä¸å˜æ€§ã€é’ˆå¯¹å¸¸é‡æ± çš„ä¼˜åŒ–ã€ç±»finalçš„å®šä¹‰
  * 
- * String¶ÔÏóµÄÄÚ²¿½á¹¹£º charÊı×é¡¢offset Æ«ÒÆ¡¢count ³¤¶È
+ * Stringå¯¹è±¡çš„å†…éƒ¨ç»“æ„ï¼š charæ•°ç»„ã€offset åç§»ã€count é•¿åº¦
  * @author cd
- * @date 2019Äê3ÔÂ27ÈÕ ÏÂÎç2:43:27
+ * @date 2019å¹´3æœˆ27æ—¥ ä¸‹åˆ2:43:27
  * @desc
  */
 
@@ -12,14 +12,14 @@ public class StringTest {
 
 	public static void main(String[] args) {
 		/**
-		 * String ÄÚ´æ·ÖÅä·½Ê½
+		 * String å†…å­˜åˆ†é…æ–¹å¼
 		 * 
-		 * ±äÁ¿                ÄÚ´æ¿Õ¼ä                 ³£Á¿³Ø
+		 * å˜é‡                å†…å­˜ç©ºé—´                 å¸¸é‡æ± 
 		 * 
-		 * str1      strÊµÀı               
+		 * str1      strå®ä¾‹               
 		 * str2  -->          ->    123
 		 * ------------------------
-		 * str3  -->  strÊµÀı                
+		 * str3  -->  strå®ä¾‹                
 		 */
 		String str1 = "123";
 		String str2 = "123";
@@ -28,15 +28,15 @@ public class StringTest {
 		System.out.println(str1 == str3); //false
 		System.out.println(str1 == str2.intern()); //true
 		/**
-		 * µ±Á½¸ö¶ÔÏóÓµÓĞÏàÍ¬µÄÖµÊ±£¬ËûÃÇÖ»ÒıÓÃ³£Á¿³ØÖĞµÄÍ¬Ò»¸ö¿½±´
-		 * str1 ºÍstr2ÒıÓÃÁËÏàÍ¬µÄµØÖ· ¶østr3ÖØĞÂ¿ª±ÙÁËÄÚ´æ¿Õ¼ä
-		 * str3µÄ³£Á¿³ØÖĞµÄÎ»ÖÃºÍstr1ÊÇÒ»ÑùµÄ
-		 * intern()·½·¨·µ»ØÁËString¶ÔÏóÔÚ³£Á¿³ØÖĞµÄÒıÓÃ
+		 * å½“ä¸¤ä¸ªå¯¹è±¡æ‹¥æœ‰ç›¸åŒçš„å€¼æ—¶ï¼Œä»–ä»¬åªå¼•ç”¨å¸¸é‡æ± ä¸­çš„åŒä¸€ä¸ªæ‹·è´
+		 * str1 å’Œstr2å¼•ç”¨äº†ç›¸åŒçš„åœ°å€ è€Œstr3é‡æ–°å¼€è¾Ÿäº†å†…å­˜ç©ºé—´
+		 * str3çš„å¸¸é‡æ± ä¸­çš„ä½ç½®å’Œstr1æ˜¯ä¸€æ ·çš„
+		 * intern()æ–¹æ³•è¿”å›äº†Stringå¯¹è±¡åœ¨å¸¸é‡æ± ä¸­çš„å¼•ç”¨
 		 */
 		
 		
-		//¾²Ì¬×Ö·û´®µÄÁ¬½Ó+²Ù×÷ ±àÒëÊ±»á½øĞĞ³¹µ×µÄÓÅ»¯
-		String result = "String" + "and" + "String" + "append"; //¾²Ì¬×Ö·û´®ËÙ¶È¿ì
+		//é™æ€å­—ç¬¦ä¸²çš„è¿æ¥+æ“ä½œ ç¼–è¯‘æ—¶ä¼šè¿›è¡Œå½»åº•çš„ä¼˜åŒ–
+		String result = "String" + "and" + "String" + "append"; //é™æ€å­—ç¬¦ä¸²é€Ÿåº¦å¿«
 		StringBuilder builder = new StringBuilder();
 		builder.append("String");
 		builder.append("and");
@@ -47,15 +47,15 @@ public class StringTest {
 		System.out.println(builder);
 		
 		String s1 = "String",s2 = "and", s3 = "String", s4 = "append";
-		String s = s1 + s2 + s3 + s4; //ºÍStringBuilderÍ¬µÈ
+		String s = s1 + s2 + s3 + s4; //å’ŒStringBuilderåŒç­‰
 		System.out.println(s);
 		
 		
 		long begin = System.currentTimeMillis();
 	
-		//³¬´óString¶ÔÏó
+		//è¶…å¤§Stringå¯¹è±¡
 		for (int i = 0; i < 10000; i++) {
-			//·´±àÒë»ØÀ´µÄ´úÂë Ã¿´Î¶¼»ánewÒ»¸öStringBuilder ËùÒÔĞÔÄÜ±È½ÏµÍ
+			//åç¼–è¯‘å›æ¥çš„ä»£ç  æ¯æ¬¡éƒ½ä¼šnewä¸€ä¸ªStringBuilder æ‰€ä»¥æ€§èƒ½æ¯”è¾ƒä½
 			//s = (new StringBuilder(String.indexOf(s))).append(i).toString();
 			s = s + i;
 		}
@@ -69,7 +69,7 @@ public class StringTest {
 		
 		begin = System.currentTimeMillis();
 		for (int i = 0; i < 10000; i++) {
-			//¶øÕâ¸öÖµnew ÁËÒ»¸öStringBuilder
+			//è€Œè¿™ä¸ªå€¼new äº†ä¸€ä¸ªStringBuilder
 			builder.append(i);
 		}
 		System.out.println("append: "+ (System.currentTimeMillis() - begin));
@@ -80,9 +80,9 @@ public class StringTest {
 		 */
 		
 		/**
-		 * ¶àÏß³ÌÏÂ¿ÉÒÔÊ¹ÓÃ StringBuffer Ïß³Ì°²È«
-		 * ²»¿¼ÂÇÏß³Ì°²È«µÄÊ¹ÓÃStringBuilder Ğ§ÂÊ¸ü¸ß
-		 * Ä¬ÈÏÈİÁ¿²ÎÊıÊÇ16×Ö½Ú
+		 * å¤šçº¿ç¨‹ä¸‹å¯ä»¥ä½¿ç”¨ StringBuffer çº¿ç¨‹å®‰å…¨
+		 * ä¸è€ƒè™‘çº¿ç¨‹å®‰å…¨çš„ä½¿ç”¨StringBuilder æ•ˆç‡æ›´é«˜
+		 * é»˜è®¤å®¹é‡å‚æ•°æ˜¯16å­—èŠ‚
 		 */
 		//StringBuffer sb = new StringBuffer(); //StringBuffer: 11
 		StringBuilder sb = new StringBuilder();//StringBuilder: 10

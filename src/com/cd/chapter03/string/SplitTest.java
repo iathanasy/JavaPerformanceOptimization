@@ -3,18 +3,18 @@ package com.cd.chapter03.string;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 /**
- * ÈıÖÖ·½·¨Ö´ĞĞÊ±¼ä
+ * ä¸‰ç§æ–¹æ³•æ‰§è¡Œæ—¶é—´
  * spilt: 284
  * StringTokenizer: 279
  * indexOf: 7283
  * @author cd
- * @date 2019Äê3ÔÂ27ÈÕ ÏÂÎç3:33:08
+ * @date 2019å¹´3æœˆ27æ—¥ ä¸‹åˆ3:33:08
  * @desc
  */
 public class SplitTest {
 
 	public static void main(String[] args) {
-		//1.split·Ö¸î×Ö·û¼òµ¥,¹¦ÄÜÇ¿´ó µ«ĞÔÄÜÈ·²»¾¡ÈËÒâ ,ÔÚÃô¸ĞÏµÍ³ÖĞÆµ·±Ê¹ÓÃÕâ¸ö·½·¨ ÊÇ²»¿ÉÈ¡µÄ
+		//1.splitåˆ†å‰²å­—ç¬¦ç®€å•,åŠŸèƒ½å¼ºå¤§ ä½†æ€§èƒ½ç¡®ä¸å°½äººæ„ ,åœ¨æ•æ„Ÿç³»ç»Ÿä¸­é¢‘ç¹ä½¿ç”¨è¿™ä¸ªæ–¹æ³• æ˜¯ä¸å¯å–çš„
 		String str = "a;b,c:d";
 		System.out.println(Arrays.asList(str.split("[;|,|:]")));
 		
@@ -33,7 +33,7 @@ public class SplitTest {
 		System.out.println("spilt: "+ (System.currentTimeMillis() - begin));
 		
 		
-		//2.Ê¹ÓÃ¸ü¸ßĞ§µÄStringTokenizerÀà·Ö¸î×Ö·û´®
+		//2.ä½¿ç”¨æ›´é«˜æ•ˆçš„StringTokenizerç±»åˆ†å‰²å­—ç¬¦ä¸²
 		begin = System.currentTimeMillis();
 		StringTokenizer st = new StringTokenizer(orgStr,";");
 		for (int i = 0; i < 10000; i++) {
@@ -45,16 +45,16 @@ public class SplitTest {
 		
 		System.out.println("StringTokenizer: "+ (System.currentTimeMillis() - begin));
 		
-		//3.¸üÓÅ»¯µÄ×Ö·û´®·Ö¸î·½Ê½  ¾­²âÊÔĞ§ÂÊ¼°Æäµ×ÏÂ
+		//3.æ›´ä¼˜åŒ–çš„å­—ç¬¦ä¸²åˆ†å‰²æ–¹å¼  ç»æµ‹è¯•æ•ˆç‡åŠå…¶åº•ä¸‹
 		begin = System.currentTimeMillis();
 		String tmp = orgStr;
 		for (int i = 0; i < 10000; i++) {
 			while(true){
 				String splitStr = null;
-				int j = tmp.indexOf(";");//ÕÒ·Ö¸ô·ûµÄÎ»ÖÃ
-				if(j < 0) break; //Ã»ÓĞÕÒµ½·Ö¸ô·û
-				splitStr = tmp.substring(0,j);//ÕÒµ½·Ö¸ô·û½ØÈ¡×Ó×Ö·û´®
-				tmp = tmp.substring(j+1);//Ê£ÏÂĞèÒª´¦ÀíµÄ×Ö·û´®
+				int j = tmp.indexOf(";");//æ‰¾åˆ†éš”ç¬¦çš„ä½ç½®
+				if(j < 0) break; //æ²¡æœ‰æ‰¾åˆ°åˆ†éš”ç¬¦
+				splitStr = tmp.substring(0,j);//æ‰¾åˆ°åˆ†éš”ç¬¦æˆªå–å­å­—ç¬¦ä¸²
+				tmp = tmp.substring(j+1);//å‰©ä¸‹éœ€è¦å¤„ç†çš„å­—ç¬¦ä¸²
 			}
 			tmp = orgStr;
 		}

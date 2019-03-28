@@ -4,7 +4,7 @@ import java.util.*;
 
 /**
  * @author cd
- * @date 2019Äê3ÔÂ27ÈÕ ÏÂÎç2:59:43
+ * @date 2019å¹´3æœˆ27æ—¥ ä¸‹åˆ2:59:43
  * @desc 
  */
 public class SubStringTest {
@@ -13,8 +13,8 @@ public class SubStringTest {
 		List<String> handler = new ArrayList<String>();
 		
 		/**
-		 * HugeStr ²»µ½1000´Î¾ÍÄÚ´æÒç³ö
-		 * ImprovedHugeStr ²»»á
+		 * HugeStr ä¸åˆ°1000æ¬¡å°±å†…å­˜æº¢å‡º
+		 * ImprovedHugeStr ä¸ä¼š
 		 */
 		for (int i = 0; i < 100000; i++) {
 			HugeStr h = new HugeStr();
@@ -24,17 +24,17 @@ public class SubStringTest {
 	}
 	
 	static class HugeStr{
-		private String str = new String(new char[100000]);//Ò»¸öºÜ³¤µÄString
-		public String getSubString(int begin, int end){//½ØÈ¡×Ö·û´® ÓĞÒç³ö
+		private String str = new String(new char[100000]);//ä¸€ä¸ªå¾ˆé•¿çš„String
+		public String getSubString(int begin, int end){//æˆªå–å­—ç¬¦ä¸² æœ‰æº¢å‡º
 			return str.substring(begin, end);
 		}
 	}
 	
 	static class ImprovedHugeStr{
 		private String str = new String(new char[100000]);
-		public String getSubString(int begin, int end){//½ØÈ¡×Ó×Ö·û´®£¬²¢ÖØĞÂÉú³É
-			//Ö÷ÒªÊ¹ÓÃµÄÒÔ¿Õ¼ä»»Ê±¼äµÄ²ßÂÔ
-			return new String(str.substring(begin, end));//ĞÂµÄ×Ö·û´®£¬Ã»ÓĞÒç³ö
+		public String getSubString(int begin, int end){//æˆªå–å­å­—ç¬¦ä¸²ï¼Œå¹¶é‡æ–°ç”Ÿæˆ
+			//ä¸»è¦ä½¿ç”¨çš„ä»¥ç©ºé—´æ¢æ—¶é—´çš„ç­–ç•¥
+			return new String(str.substring(begin, end));//æ–°çš„å­—ç¬¦ä¸²ï¼Œæ²¡æœ‰æº¢å‡º
 		}
 	}
 }

@@ -1,9 +1,9 @@
 package com.cd.chapter03.collection;
 import java.util.*;
 /**
- * List²âÊÔ
+ * Listæµ‹è¯•
  * @author cd
- * @date 2019Äê3ÔÂ27ÈÕ ÏÂÎç5:47:17
+ * @date 2019å¹´3æœˆ27æ—¥ ä¸‹åˆ5:47:17
  * @desc 
  */
 public class ListTest {
@@ -13,8 +13,8 @@ public class ListTest {
 		 * arr: 101
 		 * linked: 6
 		 *  add()
-		 * ArrayList Êı×éÊµÏÖ -> Òª½øĞĞÊı×éÖØ×é  Ô½ÍùÇ°²åÈëÖØ×éÊ±¼äÔ½³¤ 
-		 * LinkedList Á´±íÊµÏÖ -> ÔÚÈÎÒâÎ»ÖÃ²åÈëÊı¾İ¶¼ÊÇÒ»ÑùµÄ
+		 * ArrayList æ•°ç»„å®ç° -> è¦è¿›è¡Œæ•°ç»„é‡ç»„  è¶Šå¾€å‰æ’å…¥é‡ç»„æ—¶é—´è¶Šé•¿ 
+		 * LinkedList é“¾è¡¨å®ç° -> åœ¨ä»»æ„ä½ç½®æ’å…¥æ•°æ®éƒ½æ˜¯ä¸€æ ·çš„
 		 */
 		long begin = System.currentTimeMillis();
 		ArrayList<String> arr = new ArrayList();
@@ -31,33 +31,33 @@ public class ListTest {
 		}
 		System.out.println("linked: "+ (System.currentTimeMillis() - begin));
 
-		// ArrayList ±éÀúÁĞ±í
+		// ArrayList éå†åˆ—è¡¨
 		begin = System.currentTimeMillis();
 		String tmp;
 		for (Object s : arr) { 
-			//·´±àÒë»á°Ñ foreach ±àÒë³É iterator
-			//Ö»ÊÇÔÚ¸³ÖµµÄ Ê±ºò¶àÁËÒ»²½
+			//åç¼–è¯‘ä¼šæŠŠ foreach ç¼–è¯‘æˆ iterator
+			//åªæ˜¯åœ¨èµ‹å€¼çš„ æ—¶å€™å¤šäº†ä¸€æ­¥
 			//tmp = iterator.next();
-			//String s1 = tmp;//¶àÓàµÄ¸³Öµ ½µµÍÁËĞÔÄÜ
+			//String s1 = tmp;//å¤šä½™çš„èµ‹å€¼ é™ä½äº†æ€§èƒ½
 			tmp = (String) s; //foreach  foreach arr: 6
 		}
 		System.out.println(" foreach arr: "+ (System.currentTimeMillis() - begin));
 		
 		begin = System.currentTimeMillis();
 		for (Iterator<String> iterator = arr.iterator(); iterator.hasNext();) {
-			tmp = iterator.next(); //µü´úÆ÷  Iterator arr: 4
+			tmp = iterator.next(); //è¿­ä»£å™¨  Iterator arr: 4
 		}
 		System.out.println(" Iterator arr: "+ (System.currentTimeMillis() - begin));
 		
 		begin = System.currentTimeMillis();
 		int size = arr.size();
 		for (int i = 0; i < size; i++) {
-			tmp = arr.get(i); //forÑ­»· Ê¹ÓÃËæ»ú·ÃÎÊ  for arr: 2
+			tmp = arr.get(i); //forå¾ªç¯ ä½¿ç”¨éšæœºè®¿é—®  for arr: 2
 		}
 		System.out.println(" for arr: "+ (System.currentTimeMillis() - begin));
 		
 		
-		// LinkedList ±éÀúÁĞ±í
+		// LinkedList éå†åˆ—è¡¨
 		begin = System.currentTimeMillis();
 		String tmp1;
 		for (Object s : linked) {
@@ -67,41 +67,41 @@ public class ListTest {
 		
 		begin = System.currentTimeMillis();
 		for (Iterator<String> iterator = linked.iterator(); iterator.hasNext();) {
-			tmp1 = iterator.next(); //µü´úÆ÷  Iterator linked: 2
+			tmp1 = iterator.next(); //è¿­ä»£å™¨  Iterator linked: 2
 		}
 		System.out.println(" Iterator linked: "+ (System.currentTimeMillis() - begin));
 		
 		begin = System.currentTimeMillis();
 		int size1 = linked.size();
 		for (int i = 0; i < size1; i++) {
-			tmp1 = linked.get(i); //forÑ­»· Ê¹ÓÃËæ»ú·ÃÎÊ   for linked: 3670
+			tmp1 = linked.get(i); //forå¾ªç¯ ä½¿ç”¨éšæœºè®¿é—®   for linked: 3670
 		}
 		System.out.println(" for linked: "+ (System.currentTimeMillis() - begin));
 		
-		//ArrayListÉ¾³ı
+		//ArrayListåˆ é™¤
 		begin = System.currentTimeMillis();
 		/*while(arr.size() > 0){
-			arr.remove(0);//Í·²¿É¾³ı arr rm: 180
+			arr.remove(0);//å¤´éƒ¨åˆ é™¤ arr rm: 180
 		}*/
 		/*while(arr.size() > 0){
-			arr.remove(arr.size() >> 1);//ÖĞ¼äÉ¾³ı arr rm: 98
+			arr.remove(arr.size() >> 1);//ä¸­é—´åˆ é™¤ arr rm: 98
 		}*/
 		while(arr.size() > 0){
-			arr.remove(arr.size() - 1);//Î²²¿É¾³ı arr rm: 3
+			arr.remove(arr.size() - 1);//å°¾éƒ¨åˆ é™¤ arr rm: 3
 		}
 		
 		System.out.println("arr rm: "+ (System.currentTimeMillis() - begin));
 		
-		//LinkedListÉ¾³ı
+		//LinkedListåˆ é™¤
 		begin = System.currentTimeMillis();
 		/*while(arr.size() > 0){
-			arr.remove(0);//Í·²¿É¾³ı linked rm: 0
+			arr.remove(0);//å¤´éƒ¨åˆ é™¤ linked rm: 0
 		}*/
 		/*while(arr.size() > 0){
-			arr.remove(arr.size() >> 1);//ÖĞ¼äÉ¾³ı linked rm: 1
+			arr.remove(arr.size() >> 1);//ä¸­é—´åˆ é™¤ linked rm: 1
 		}*/
 		while(arr.size() > 0){
-			arr.remove(arr.size() - 1);//Î²²¿É¾³ı linked rm: 0
+			arr.remove(arr.size() - 1);//å°¾éƒ¨åˆ é™¤ linked rm: 0
 		}
 		
 		System.out.println("linked rm: "+ (System.currentTimeMillis() - begin));
@@ -109,10 +109,10 @@ public class ListTest {
 		
 		
 		/***
-		 * ArrayListËæ»ú·ÃÎÊÊÇºÜ¿ìµÄ  ÔöÉ¾¸Ä»áµ¼ÖÂÊı×é ÖØ×é
-		 * LinkedList »ùÓÚÁ´±íÊµÏÖ Ëæ»ú·ÃÎÊĞÔÄÜºÜ²î ÔöÉ¾¸ÄºÜ¿ì
+		 * ArrayListéšæœºè®¿é—®æ˜¯å¾ˆå¿«çš„  å¢åˆ æ”¹ä¼šå¯¼è‡´æ•°ç»„ é‡ç»„
+		 * LinkedList åŸºäºé“¾è¡¨å®ç° éšæœºè®¿é—®æ€§èƒ½å¾ˆå·® å¢åˆ æ”¹å¾ˆå¿«
 		 * 
-		 * ²éÑ¯µÄÊı¾İ  LinkedList forÑ­»·ÊÇºÜÂıµÄ ĞÔÄÜºÜ²î
+		 * æŸ¥è¯¢çš„æ•°æ®  LinkedList forå¾ªç¯æ˜¯å¾ˆæ…¢çš„ æ€§èƒ½å¾ˆå·®
 		 *   foreach arr: 6
 			 Iterator arr: 4
 			 for arr: 2
