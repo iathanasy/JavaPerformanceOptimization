@@ -1,7 +1,7 @@
 package com.cd.chapter02.factory.abstractfactory;
 
 /**
- * @description: 男性工厂类
+ * @description: 鐢锋�у伐鍘傜被
  * @author: Mr.Wang
  * @create: 2019-03-27 22:47
  **/
@@ -9,7 +9,6 @@ public class MaleHumanFactory extends AbstractHumanFactory{
 
     @Override
     public Human createYellowHuman() {
-
         return super.createHuman(HumanEnum.YellowMaleHuman);
     }
 
