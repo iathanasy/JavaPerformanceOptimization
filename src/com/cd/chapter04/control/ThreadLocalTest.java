@@ -20,6 +20,7 @@ public class ThreadLocalTest implements Runnable{
 	
 	public static final ThreadLocal<Date> local = new ThreadLocal<Date>();
 	
+	
 	private long time;
 	
 	public ThreadLocalTest(long time){
