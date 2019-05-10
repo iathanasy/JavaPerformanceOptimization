@@ -6,7 +6,9 @@ package com.cd.chapter02.factory;
  * @create: 2019-03-27 21:13
  **/
 public interface Human {
-    void laugh();//愉快的
-    void cry();//哭
-    void talk();//说话
+	void laugh();// 愉快的
+
+	void cry();// 哭
+
+	void talk();// 说话
 }

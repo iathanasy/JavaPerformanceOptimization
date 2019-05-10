@@ -1,10 +1,10 @@
 package com.cd.chapter02.strategy;
 
 /**
- * @description: ²ßÂÔ½Ó¿Ú
+ * @description: ï¿½ï¿½ï¿½Ô½Ó¿ï¿½
  * @author: Mr.Wang
  * @create: 2019-03-26 22:36
  **/
 public interface IStrategy {
-    void operate();//²Ù×÷
+	void operate();// ï¿½ï¿½ï¿½ï¿½
 }

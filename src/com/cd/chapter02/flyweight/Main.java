@@ -1,9 +1,10 @@
 package com.cd.chapter02.flyweight;
+
 /**
  * 
  * @author cd
- * @date 2019Äê3ÔÂ25ÈÕ ÏÂÎç5:28:56
- * @desc 
+ * @date 2019ï¿½ï¿½3ï¿½ï¿½25ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½5:28:56
+ * @desc
  */
 public class Main {
 

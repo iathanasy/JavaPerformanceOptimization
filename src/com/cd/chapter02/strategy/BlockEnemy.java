@@ -6,8 +6,8 @@ package com.cd.chapter02.strategy;
  * @create: 2019-03-26 22:42
  **/
 public class BlockEnemy implements IStrategy {
-    @Override
-    public void operate() {
-        System.out.println("操作二...");
-    }
+	@Override
+	public void operate() {
+		System.out.println("操作二...");
+	}
 }

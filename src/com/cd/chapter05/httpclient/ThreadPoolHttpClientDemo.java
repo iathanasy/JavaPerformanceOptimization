@@ -13,6 +13,7 @@ import org.apache.http.util.EntityUtils;
 
 /**
  * 多线程连接池实例
+ * 
  * @author cd
  * @date 2019年5月7日 下午5:08:00
  * @desc
@@ -20,37 +21,36 @@ import org.apache.http.util.EntityUtils;
 public class ThreadPoolHttpClientDemo {
 
 	public static void main(String[] args) {
-		//连接池对象
+		// 连接池对象
 		PoolingHttpClientConnectionManager connectionManager = new PoolingHttpClientConnectionManager();
-		//将最大连接数增加到200
+		// 将最大连接数增加到200
 		connectionManager.setMaxTotal(200);
-		//每个路由的默认连接数增加到20
+		// 每个路由的默认连接数增加到20
 		connectionManager.setDefaultMaxPerRoute(20);
-		
-		//HttpClient对象
-		CloseableHttpClient httpClient = HttpClients.custom().setConnectionManager(connectionManager).build();
-		//URIs to DoGet
-        String[] urisToGet = {
-                "https://www.baidu.com/s?word=java",
-                "https://www.baidu.com/s?word=java",
-                "https://www.baidu.com/s?word=java",
-                "https://www.baidu.com/s?word=java"
-        };
-        
-        //为每个URl创建一个线程
-        GetThread[] threads = new GetThread[urisToGet.length];
-        for (int i = 0; i < threads.length; i++) {
+
+		// HttpClient对象
+		CloseableHttpClient httpClient = HttpClients.custom()
+				.setConnectionManager(connectionManager).build();
+		// URIs to DoGet
+		String[] urisToGet = { "https://www.baidu.com/s?word=java",
+				"https://www.baidu.com/s?word=java",
+				"https://www.baidu.com/s?word=java",
+				"https://www.baidu.com/s?word=java" };
+
+		// 为每个URl创建一个线程
+		GetThread[] threads = new GetThread[urisToGet.length];
+		for (int i = 0; i < threads.length; i++) {
 			HttpGet request = new HttpGet(urisToGet[i]);
 			threads[i] = new GetThread(httpClient, request);
 		}
-        
-        //启动线程
-        for (int i = 0; i < threads.length; i++) {
+
+		// 启动线程
+		for (int i = 0; i < threads.length; i++) {
 			threads[i].start();
 		}
-        
-        //join线程
-        for (int i = 0; i < threads.length; i++) {
+
+		// join线程
+		for (int i = 0; i < threads.length; i++) {
 			try {
 				threads[i].join();
 			} catch (InterruptedException e) {
@@ -59,18 +59,19 @@ public class ThreadPoolHttpClientDemo {
 			}
 		}
 	}
-	
+
 	/**
 	 * 执行Get请求线程
+	 * 
 	 * @author cd
 	 * @date 2019年5月7日 下午5:11:53
 	 * @desc
 	 */
-	public static class GetThread extends Thread{
+	public static class GetThread extends Thread {
 		private final CloseableHttpClient httpClient;
 		private final HttpContext context;
 		private final HttpGet request;
-		
+
 		public GetThread(CloseableHttpClient httpClient, HttpGet request) {
 			this.httpClient = httpClient;
 			this.context = HttpClientContext.create();
@@ -85,10 +86,11 @@ public class ThreadPoolHttpClientDemo {
 					HttpEntity entity = response.getEntity();
 					String context = EntityUtils.toString(entity);
 					System.out.println(context);
-					
-				}finally{
+
+				} finally {
 					EntityUtils.consume(response.getEntity());
-					if(response != null) response.close();
+					if (response != null)
+						response.close();
 				}
 			} catch (Exception e) {
 				System.err.println(e.getMessage());

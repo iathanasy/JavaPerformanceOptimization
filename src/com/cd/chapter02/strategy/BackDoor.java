@@ -7,8 +7,8 @@ package com.cd.chapter02.strategy;
  **/
 public class BackDoor implements IStrategy {
 
-    @Override
-    public void operate() {
-        System.out.println("操作一...");
-    }
+	@Override
+	public void operate() {
+		System.out.println("操作一...");
+	}
 }

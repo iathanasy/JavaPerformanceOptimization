@@ -8,11 +8,11 @@ import java.util.Vector;
  * @date 2019年3月26日 上午11:07:18
  * @desc 具体的主题实现
  */
-public class ConcreteSubject implements ISubject{
-	
+public class ConcreteSubject implements ISubject {
+
 	Vector<IObserver> observers = new Vector<IObserver>();
 	private User user;
-	
+
 	@Override
 	public void attach(IObserver observer) {
 		observers.addElement(observer);
@@ -26,11 +26,11 @@ public class ConcreteSubject implements ISubject{
 	@Override
 	public void inform() {
 		for (IObserver obs : observers) {
-			obs.update(user); //注意 在这里通知观察者
+			obs.update(user); // 注意 在这里通知观察者
 		}
 	}
-	
-	public void setUser(User u){
+
+	public void setUser(User u) {
 		this.user = u;
 		inform();
 	}

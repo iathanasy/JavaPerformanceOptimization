@@ -1,4 +1,5 @@
 package com.cd.chapter02.decorator;
+
 /**
  * 
  * @author cd
@@ -7,5 +8,5 @@ package com.cd.chapter02.decorator;
  */
 public interface IPacketCreator {
 
-	String handlerContent();//用于内容处理
+	String handlerContent();// 用于内容处理
 }

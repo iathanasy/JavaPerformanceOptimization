@@ -7,15 +7,16 @@ import java.util.ArrayList;
  * @author: Mr.Wang
  * @create: 2019-04-01 22:13
  **/
-public class BenzBuilder extends CarBuilder{
-    private BenzModel benz = new BenzModel();
-    @Override
-    public void setSequence(ArrayList<String> sequence) {
-        this.benz.setSequence(sequence);
-    }
+public class BenzBuilder extends CarBuilder {
+	private BenzModel benz = new BenzModel();
 
-    @Override
-    public CarModel getCarModel() {
-        return this.benz;
-    }
+	@Override
+	public void setSequence(ArrayList<String> sequence) {
+		this.benz.setSequence(sequence);
+	}
+
+	@Override
+	public CarModel getCarModel() {
+		return this.benz;
+	}
 }

@@ -6,13 +6,13 @@ package com.cd.chapter02.strategy;
  * @create: 2019-03-26 22:47
  **/
 public class Main {
-    public static void main(String[] args) {
-        Context context;
-        context = new Context(new BackDoor());
-        //µÚÒ»¸ö²Ù×÷
-        context.operate();
+	public static void main(String[] args) {
+		Context context;
+		context = new Context(new BackDoor());
+		// ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		context.operate();
 
-        context = new Context(new BlockEnemy());
-        context.operate();
-    }
+		context = new Context(new BlockEnemy());
+		context.operate();
+	}
 }

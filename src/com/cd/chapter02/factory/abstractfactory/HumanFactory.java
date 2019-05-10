@@ -6,10 +6,12 @@ package com.cd.chapter02.factory.abstractfactory;
  * @create: 2019-03-27 22:39
  **/
 public interface HumanFactory {
-    //创建黄人
-    Human createYellowHuman();
-    //创建白人
-    Human createWhiteHuman();
-    //创建黑人
-    Human createBlackHuman();
+	// 创建黄人
+	Human createYellowHuman();
+
+	// 创建白人
+	Human createWhiteHuman();
+
+	// 创建黑人
+	Human createBlackHuman();
 }

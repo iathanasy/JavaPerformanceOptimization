@@ -13,19 +13,19 @@ public class ReportManagerFactory {
 
 	Map<String, IReportManager> financial = new HashMap<String, IReportManager>();
 	Map<String, IReportManager> employee = new HashMap<String, IReportManager>();
-	
-	IReportManager getFinancialReportManager(String tenantId){
+
+	IReportManager getFinancialReportManager(String tenantId) {
 		IReportManager r = financial.get(tenantId);
-		if(r == null){
+		if (r == null) {
 			r = new FinancialReportManager(tenantId);
-			financial.put(tenantId, r);//维护已创建的享元对象
+			financial.put(tenantId, r);// 维护已创建的享元对象
 		}
 		return r;
 	}
-	
-	IReportManager getEmployeeReportManager(String tenantId){
+
+	IReportManager getEmployeeReportManager(String tenantId) {
 		IReportManager r = employee.get(tenantId);
-		if(r == null){
+		if (r == null) {
 			r = new EmployeeReportManager(tenantId);
 			employee.put(tenantId, r);
 		}

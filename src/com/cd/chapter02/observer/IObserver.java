@@ -1,4 +1,5 @@
 package com.cd.chapter02.observer;
+
 /**
  * 
  * @author cd
@@ -7,5 +8,5 @@ package com.cd.chapter02.observer;
  */
 public interface IObserver {
 
-	void update(User u);//更新观察者
+	void update(User u);// 更新观察者
 }
