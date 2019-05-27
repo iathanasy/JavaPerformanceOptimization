@@ -6,6 +6,11 @@ public class Config {
      * 是否持久化到数据库
      */
     public static boolean dbEnable = false;
+    
+    /**
+     * driverClassName
+     */
+    public static String driverClassName = "com.mysql.jdbc.Driver";
     /**
      * db.name
      */
@@ -22,6 +27,11 @@ public class Config {
      * db.password
      */
     public static String dbPassword = "root";
+    /**
+     * db.url
+     */
+    public static String dbUrl = "jdbc:mysql://" + dbHost + ":3306/" + dbName + "?characterEncoding=utf8";
+    
     /**
      * 创建表语句
      */
