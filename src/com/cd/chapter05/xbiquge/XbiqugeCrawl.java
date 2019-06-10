@@ -75,7 +75,7 @@ public class XbiqugeCrawl extends AbstractHttpClient{
 	
 	private XbiqugeCrawl(){
 
-		new Thread(new Runnable() {
+		/*new Thread(new Runnable() {
 			@Override
 			public void run() {
 				try {
@@ -87,7 +87,7 @@ public class XbiqugeCrawl extends AbstractHttpClient{
 				}
 				
 			}
-		}).start();
+		}).start();*/
 		
 		try {
 			//等待2s
@@ -97,7 +97,7 @@ public class XbiqugeCrawl extends AbstractHttpClient{
 			e.printStackTrace();
 		}
 		
-		//initOne();
+		initOne();
 		initChapterThreadPool();
 		//启动代理
 		ProxyHttpClient.getInstance().startCrawl();
@@ -127,8 +127,8 @@ public class XbiqugeCrawl extends AbstractHttpClient{
 	}
 	
 	public void initOne(){
-		String url = "http://www.xbiquge.la/7/7877/";
-		map.put(url, "斗破苍穹");
+		String url = "http://www.xbiquge.la/26/26508/";
+		map.put(url, "上门女婿");
 		chapterMap.put(url, XbiqugeChapterParser.class);//
 	}
 	

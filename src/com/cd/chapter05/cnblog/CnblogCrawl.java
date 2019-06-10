@@ -36,9 +36,9 @@ import com.cd.chapter05.proxy.common.utlis.ThreadPoolUtil;
  */
 public class CnblogCrawl extends AbstractHttpClient{
 	private final static String url="https://www.cnblogs.com";
-	private static Queue<String> unVisitedUrl = new LinkedBlockingQueue<String>();
-	private static Set<String> visitedUrl = new HashSet<String>();
-	private static ThreadPoolExecutor executor = ThreadPoolUtil.createThreadPool("pool", 10, 100);
+	//private static Queue<String> unVisitedUrl = new LinkedBlockingQueue<String>();
+	//private static Set<String> visitedUrl = new HashSet<String>();
+	//private static ThreadPoolExecutor executor = ThreadPoolUtil.createThreadPool("pool", Runtime.getRuntime().availableProcessors() + 1, 100);
 	
 	private volatile static CnblogCrawl instance;
 	
@@ -56,6 +56,8 @@ public class CnblogCrawl extends AbstractHttpClient{
 	public static void main(String[] args){
 		try {
 			CnblogCrawl.getInstance().getXpath();
+			
+			
 		} catch (XPathExpressionException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -77,10 +79,14 @@ public class CnblogCrawl extends AbstractHttpClient{
 			Document dom = new DomSerializer(new CleanerProperties()).createDOM(tagNode);
 			XPath xPath = XPathFactory.newInstance().newXPath();
 			NodeList result = (NodeList) xPath.evaluate("//div[@class='post_item_body']/h3", dom, XPathConstants.NODESET);
+			NodeList href = (NodeList) xPath.evaluate("//div[@class='post_item_body']/h3/a/@href", dom, XPathConstants.NODESET);
+			NodeList summary = (NodeList) xPath.evaluate("//div[@class='post_item_body']/p[@class='post_item_summary']", dom, XPathConstants.NODESET);
 			
 			for (int i = 0; i < result.getLength(); i++) {
 				Node node = result.item(i);
-				System.out.println(node.getTextContent());
+				Node node1 = href.item(i);
+				Node node2 = summary.item(i);
+				System.out.println(node.getTextContent() + ":"+ node1.getTextContent() + ":" + node2.getTextContent());
 			}
 			
 		}else{
