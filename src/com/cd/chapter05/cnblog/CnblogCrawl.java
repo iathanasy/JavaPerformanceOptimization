@@ -55,7 +55,16 @@ public class CnblogCrawl extends AbstractHttpClient{
 	
 	public static void main(String[] args){
 		try {
-			CnblogCrawl.getInstance().getXpath();
+			while(true){
+				CnblogCrawl.getInstance().getXpath();
+				try {
+					Thread.sleep(1000 * 60);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			
 			
 			
 		} catch (XPathExpressionException e) {
