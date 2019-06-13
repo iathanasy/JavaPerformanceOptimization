@@ -8,6 +8,5 @@ public class Main {
 		CurrentObserver current = new CurrentObserver(subject);
 		StatisticsObserver statis = new StatisticsObserver(subject);
 		subject.setMessage("zz");
-		
 	}
 }
