@@ -124,7 +124,8 @@ public class Ehcache {
         Cache cache = checkCache(cacheName);
         Element e = cache.get(key);
         if (e != null) {
-            return e.getObjectValue();
+        	Object o = e.getObjectValue();
+            return o;
         }
         return null;
     }
@@ -140,7 +141,8 @@ public class Ehcache {
         Cache cache = checkCache(cacheName);
         Element e = cache.get(key);
         if (e != null) {
-            return e.getObjectValue();
+        	Object o = e.getObjectValue();
+            return o;
         }
         return null;
     }
@@ -208,13 +210,17 @@ public class Ehcache {
     	String cacheName = "cache";
     	
     	try {
-    		/*for (int i = 1; i <= 100; i++) {
+    		for (int i = 1; i <= 100; i++) {
     			Ehcache.put(cacheName, "a"+i, "value"+i);
-			}*/
-			
+    			//Thread.sleep(1000);
+    			Object obj = Ehcache.get(cacheName, "a"+i);
+    			logger.info(obj.toString());
+			}
+    		
 			//Ehcache.remove(cacheName, "a");
-			Object obj = Ehcache.get(cacheName, "a1");
-			logger.info(obj.toString());
+			
+			
+			
 		} catch (Exception e) {
 			logger.error("cache:"+ e.getMessage());
 		}finally{

@@ -35,5 +35,29 @@ public class RegexUtil {
 		}
 		return matches(URL_REGEX, str);
 	}
+	
+	/**
+	 * 提取时间格式
+	 * @param pInput
+	 * @return
+	 */
+	public static String extractTime(String pInput) {
+        if (pInput == null) {
+            return null;
+        }
+        String regEx = "\\d{4}-\\d{2}-\\d{2}";
+        Pattern p = Pattern.compile(regEx);
+        Matcher matcher = p.matcher(pInput);
+
+        if (matcher.find()) {
+            return matcher.group();
+        } else {
+            return null;
+        }
+    }
+	
+	public static void main(String[] args) {
+		System.out.println(extractTime("该的信息2019-05-30　/　1006人看过"));
+	}
 
 }
