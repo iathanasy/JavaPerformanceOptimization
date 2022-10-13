@@ -29,24 +29,28 @@ public class Main {
     public static void main(String[] args) throws InterruptedException {
         Thread t1 = new Thread(() ->{
             // 检测线程中断状态
-            while (!Thread.currentThread().isInterrupted()){
+//            while (!Thread.currentThread().isInterrupted()){
+            while (!Thread.interrupted()){
                 try {
                     Thread.sleep(1000);
                     System.out.println("sleep 1000");
                 } catch (InterruptedException e) {
                     e.printStackTrace();
+
                     /**
                      * 捕捉到异常时，中断状态在这里为false，所以你要不设置中断位的话，即使主线程中尝试中断了，但在这里还是跳不出while循环
                      * 注释和不注释 // 注释就一直输出 `sleep 1000`,
                      * 不注释过1秒后线程就都停止了，也不输出 `sleep 1000`
                      */
                      Thread.currentThread().interrupt();//作用：设置为true
+                    // 注意此处会重置状态为false
+                    System.out.println(Thread.currentThread().isInterrupted());
                 }
             }
         });
         t1.start();
         //等t1线程运行起来
-        Thread.sleep(500);
+        Thread.sleep(1500);
         t1.interrupt();//中断t1线程
     }
 }
